@@ -26,6 +26,48 @@
         ],
         "createdAt": "2026-10-19T13:54:27.347Z",
         "reason": "services list top border is a hairline list rule; rows have 72px min-height and are vertically centred"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgb(255, 255, 255)",
+        "createdAt": "2026-10-19T14:06:00.683Z",
+        "reason": "pitch-site build: deliberate one-off the DESIGN.md documenter omitted (white label on violet buttons/arrow)"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#b3acb9",
+        "createdAt": "2026-10-19T14:06:00.758Z",
+        "reason": "pitch-site build: deliberate one-off the DESIGN.md documenter omitted (pre-JS wall fallback gradient)"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "18px",
+        "createdAt": "2026-10-19T14:06:00.837Z",
+        "reason": "pitch-site build: deliberate one-off the DESIGN.md documenter omitted (desktop wall panel corner)"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "6px",
+        "createdAt": "2026-10-19T14:06:00.911Z",
+        "reason": "pitch-site build: deliberate one-off the DESIGN.md documenter omitted (focus-ring radius)"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "5px",
+        "createdAt": "2026-10-19T14:06:00.987Z",
+        "reason": "pitch-site build: deliberate one-off the DESIGN.md documenter omitted (checkbox box inside chips)"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "11px",
+        "createdAt": "2026-10-19T14:06:01.063Z",
+        "reason": "pitch-site build: deliberate one-off the DESIGN.md documenter omitted (CONTRACTING subtitle in the logo lockup, detector floor)"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "clamp(20px,5.4vw,22px)",
+        "createdAt": "2026-10-19T14:06:01.141Z",
+        "reason": "pitch-site build: deliberate one-off the DESIGN.md documenter omitted (Facebook 'more' link lead size)"
       }
     ]
   }
