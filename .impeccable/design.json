@@ -1,0 +1,555 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-19T14:05:01.030858+00:00",
+  "title": "Design System: Perfect X Contracting",
+  "extensions": {
+    "colorMeta": {
+      "violet": {
+        "role": "primary",
+        "displayName": "Logo Violet",
+        "canonical": "#6d2ee6",
+        "oklch": "oklch(50.8% 0.250 289.8)",
+        "tonalRamp": [
+          "#0e002c",
+          "#2a0066",
+          "#4a01a8",
+          "#6927e1",
+          "#865cff",
+          "#a592ff",
+          "#c8c0fe",
+          "#eeecfe"
+        ]
+      },
+      "violet-press": {
+        "role": "primary",
+        "displayName": "Pressed Violet",
+        "canonical": "#5a20cf",
+        "oklch": "oklch(45.5% 0.237 287.5)",
+        "tonalRamp": [
+          "#0d002d",
+          "#280168",
+          "#4601ab",
+          "#6331dc",
+          "#815ffe",
+          "#a193ff",
+          "#c5c1fe",
+          "#edecfe"
+        ]
+      },
+      "violet-hi": {
+        "role": "primary",
+        "displayName": "Lit Violet",
+        "canonical": "#a678ff",
+        "oklch": "oklch(67.9% 0.193 296.6)",
+        "tonalRamp": [
+          "#100028",
+          "#300060",
+          "#510f99",
+          "#703cbf",
+          "#9061e6",
+          "#b08cfe",
+          "#cfbdfe",
+          "#f0ebfe"
+        ]
+      },
+      "form-accent": {
+        "role": "secondary",
+        "displayName": "Estimate Blue",
+        "canonical": "#2b6fd6",
+        "oklch": "oklch(55.6% 0.173 258.9)",
+        "tonalRamp": [
+          "#000924",
+          "#002155",
+          "#013c8d",
+          "#155bc1",
+          "#3b7fe7",
+          "#6ba5ff",
+          "#aacbfe",
+          "#e6effe"
+        ]
+      },
+      "silver": {
+        "role": "tertiary",
+        "displayName": "Brushed Silver",
+        "canonical": "#c9cbd4",
+        "oklch": "oklch(84.3% 0.013 276.1)",
+        "tonalRamp": [
+          "#0a0b11",
+          "#23252b",
+          "#404249",
+          "#5f6169",
+          "#80828a",
+          "#a3a4ad",
+          "#c7c9d2",
+          "#eceef7"
+        ]
+      },
+      "silver-lettering": {
+        "role": "tertiary",
+        "displayName": "Headline Silver",
+        "canonical": "#dcdee6",
+        "oklch": "oklch(90.1% 0.011 274.9)",
+        "tonalRamp": [
+          "#0a0b10",
+          "#23252b",
+          "#404248",
+          "#5f6168",
+          "#808289",
+          "#a3a5ac",
+          "#c7c9d1",
+          "#eceef6"
+        ]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Stairwell Shadow",
+        "canonical": "#1d1932",
+        "oklch": "oklch(23.2% 0.047 289.5)",
+        "tonalRamp": [
+          "#0b071d",
+          "#25213b",
+          "#413e5a",
+          "#605d7b",
+          "#817e9d",
+          "#a4a1c2",
+          "#c8c5e7",
+          "#eeecfe"
+        ]
+      },
+      "ground-2": {
+        "role": "neutral",
+        "displayName": "Deep Landing",
+        "canonical": "#262042",
+        "oklch": "oklch(26.9% 0.062 289.7)",
+        "tonalRamp": [
+          "#0c0423",
+          "#251f41",
+          "#413c61",
+          "#605b82",
+          "#817ca5",
+          "#a49fca",
+          "#c8c3f0",
+          "#eeecfe"
+        ]
+      },
+      "on-dark": {
+        "role": "neutral",
+        "displayName": "Chalk Violet",
+        "canonical": "#efecf7",
+        "oklch": "oklch(94.9% 0.015 298.6)",
+        "tonalRamp": [
+          "#0c0a11",
+          "#26242c",
+          "#434049",
+          "#625f69",
+          "#83818a",
+          "#a6a3ad",
+          "#cac7d2",
+          "#efecf7"
+        ]
+      },
+      "on-dark-soft": {
+        "role": "neutral",
+        "displayName": "Dusk Violet",
+        "canonical": "#bdb6d6",
+        "oklch": "oklch(79.2% 0.045 295.4)",
+        "tonalRamp": [
+          "#0d061c",
+          "#272039",
+          "#443d58",
+          "#635c79",
+          "#847d9b",
+          "#a7a0bf",
+          "#cbc4e4",
+          "#efebfe"
+        ]
+      },
+      "compound": {
+        "role": "neutral",
+        "displayName": "Sanded Compound",
+        "canonical": "#f1efe9",
+        "oklch": "oklch(95.2% 0.008 91.5)",
+        "tonalRamp": [
+          "#0c0b07",
+          "#262521",
+          "#43423d",
+          "#63615c",
+          "#84827d",
+          "#a7a59f",
+          "#cbc9c3",
+          "#f0eee8"
+        ]
+      },
+      "wall-board": {
+        "role": "neutral",
+        "displayName": "Wall Board",
+        "canonical": "#c4beb4",
+        "oklch": "oklch(80.4% 0.015 80.7)",
+        "tonalRamp": [
+          "#0f0a05",
+          "#29241d",
+          "#464139",
+          "#666058",
+          "#878278",
+          "#aaa49a",
+          "#cec8be",
+          "#f4eee3"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#1d1932",
+        "oklch": "oklch(23.2% 0.047 289.5)",
+        "tonalRamp": [
+          "#0b071d",
+          "#25213b",
+          "#413e5a",
+          "#605d7b",
+          "#817e9d",
+          "#a4a1c2",
+          "#c8c5e7",
+          "#eeecfe"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "canonical": "#4a4466",
+        "oklch": "oklch(40.7% 0.057 291.8)",
+        "tonalRamp": [
+          "#0d0520",
+          "#261f3e",
+          "#423c5e",
+          "#615c7f",
+          "#827da2",
+          "#a59fc6",
+          "#c9c3ec",
+          "#eeecfe"
+        ]
+      },
+      "line-light": {
+        "role": "neutral",
+        "displayName": "Compound Rule",
+        "canonical": "#cdc8bd",
+        "oklch": "oklch(83.4% 0.016 86.4)",
+        "tonalRamp": [
+          "#0e0b04",
+          "#28251c",
+          "#464238",
+          "#656157",
+          "#868278",
+          "#a9a59a",
+          "#cec9be",
+          "#f3eee3"
+        ]
+      },
+      "control-line": {
+        "role": "neutral",
+        "displayName": "Control Line",
+        "canonical": "#8f8899",
+        "oklch": "oklch(63.8% 0.026 304.3)",
+        "tonalRamp": [
+          "#0e0814",
+          "#282230",
+          "#453f4e",
+          "#645e6e",
+          "#867f8f",
+          "#a8a1b3",
+          "#cdc5d7",
+          "#f2eafd"
+        ]
+      },
+      "arrow-rest": {
+        "role": "neutral",
+        "displayName": "Arrow Rest",
+        "canonical": "#e2ded5",
+        "oklch": "oklch(90.1% 0.013 86.8)",
+        "tonalRamp": [
+          "#0d0b06",
+          "#28251e",
+          "#45423a",
+          "#646159",
+          "#86827a",
+          "#a8a59c",
+          "#cdc9c0",
+          "#f2eee5"
+        ]
+      },
+      "chip-checked": {
+        "role": "neutral",
+        "displayName": "Chip Tint",
+        "canonical": "#efe8fd",
+        "oklch": "oklch(94.3% 0.029 301.0)",
+        "tonalRamp": [
+          "#0d0815",
+          "#272231",
+          "#443f4f",
+          "#645e6f",
+          "#857f91",
+          "#a8a1b5",
+          "#ccc5da",
+          "#f1ebfe"
+        ]
+      },
+      "error": {
+        "role": "neutral",
+        "displayName": "Error Red",
+        "canonical": "#a3122f",
+        "oklch": "oklch(46.0% 0.175 18.7)",
+        "tonalRamp": [
+          "#1f0003",
+          "#4c010f",
+          "#7f0220",
+          "#ae2238",
+          "#d64b58",
+          "#fe717a",
+          "#ffb2b2",
+          "#ffe8e8"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headline only, uppercase, Headline Silver."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings, uppercase."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Service rows; more-link and step titles at the same weight."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Hero promise line, max 34ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text and input text."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Field labels, legend, header contact."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "All buttons."
+      },
+      "sign-off": {
+        "displayName": "Sign-off",
+        "purpose": "Closing 'Quality work. Reliable service.' in silver, uppercase."
+      }
+    },
+    "shadows": [
+      {
+        "name": "work-photo",
+        "value": "0 14px 30px -14px rgba(0,0,0,.6)",
+        "purpose": "Only lifted element: gallery figures on the dark ground."
+      },
+      {
+        "name": "form-halo",
+        "value": "0 0 0 3px rgba(43,111,214,.2)",
+        "purpose": "Form-only hover/focus halo on inputs and chips."
+      },
+      {
+        "name": "sponge-drop (canvas)",
+        "value": "rgba(40,26,70,.38) blur 10 offset 5,7",
+        "purpose": "Sanding sponge drop shadow, down-right per the window light."
+      }
+    ],
+    "motion": [
+      {
+        "name": "control-transition",
+        "value": ".18s",
+        "purpose": "Buttons, arrows, more-block background."
+      },
+      {
+        "name": "form-transition",
+        "value": ".15s",
+        "purpose": "Input and chip border/halo."
+      },
+      {
+        "name": "edge-speed",
+        "value": "0.0016",
+        "purpose": "Mud edge SPEED; three sines at 1x, 1.7x reversed, 0.6x."
+      },
+      {
+        "name": "edge-amp",
+        "value": "7",
+        "purpose": "Mud edge AMP (px in a 44px-tall 1200-wide viewBox)."
+      },
+      {
+        "name": "wall-tunables",
+        "value": "SPONGE_W/H 74x44 phone 96x56 desktop; SAND 0.34; REGROW 0.0045; DUST_MAX 520/1300; AUTO_SPEED 1; IDLE_MS 2200; REWARD_PX 1400",
+        "purpose": "Hero wall IIFE constants."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "still frame",
+        "purpose": "Edges and wall hold still; video gets controls; smooth scroll off."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "two-up-buttons",
+        "value": "600px"
+      },
+      {
+        "name": "landscape-phone",
+        "value": "min-width 600px and max-height 520px"
+      },
+      {
+        "name": "wall-phone (JS)",
+        "value": "700px"
+      },
+      {
+        "name": "desktop",
+        "value": "1024px"
+      },
+      {
+        "name": "container",
+        "value": "1180px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Violet fill for the one main action per view.",
+      "html": "<div class=\"ds-dark\"><a class=\"ds-btn ds-btn-fill\" href=\"#\">Get a free estimate</a></div>",
+      "css": ":host{--ground:#1d1932;--ground-2:#262042;--compound:#f1efe9;--ink:#1d1932;--ink-soft:#4a4466;--on-dark:#efecf7;--on-dark-soft:#bdb6d6;--violet:#6d2ee6;--violet-hi:#a678ff;--form-accent:#2b6fd6;--silver:#c9cbd4;--line-light:#cdc8bd;--radius:14px;--font:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}.ds-dark{background:var(--ground);padding:24px}.ds-btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 24px;border-radius:12px;font:800 17px/1 var(--font);text-decoration:none;border:2px solid var(--violet);cursor:pointer;transition:background-color .18s,border-color .18s,color .18s}.ds-btn:focus-visible{outline:3px solid var(--violet-hi);outline-offset:3px}.ds-btn-fill{background:var(--violet);color:#fff}.ds-btn-fill:hover{background:#5a20cf;border-color:#5a20cf}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary action on dark: silver outline, lit violet on hover.",
+      "html": "<div class=\"ds-dark\"><a class=\"ds-btn ds-btn-line\" href=\"#\">See our work</a></div>",
+      "css": ":host{--ground:#1d1932;--ground-2:#262042;--compound:#f1efe9;--ink:#1d1932;--ink-soft:#4a4466;--on-dark:#efecf7;--on-dark-soft:#bdb6d6;--violet:#6d2ee6;--violet-hi:#a678ff;--form-accent:#2b6fd6;--silver:#c9cbd4;--line-light:#cdc8bd;--radius:14px;--font:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}.ds-dark{background:var(--ground);padding:24px}.ds-btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 24px;border-radius:12px;font:800 17px/1 var(--font);text-decoration:none;border:2px solid var(--violet);cursor:pointer;transition:background-color .18s,border-color .18s,color .18s}.ds-btn:focus-visible{outline:3px solid var(--violet-hi);outline-offset:3px}.ds-btn-line{background:transparent;color:var(--on-dark);border-color:var(--silver)}.ds-btn-line:hover{border-color:var(--violet-hi);color:#fff}"
+    },
+    {
+      "name": "Header Lockup",
+      "kind": "nav",
+      "refersTo": "header",
+      "description": "Brand lockup left, Messenger contact right.",
+      "html": "<header class=\"ds-top\"><a class=\"ds-brand\" href=\"#\"><span><b>Perfect X</b><small>Contracting</small></span></a><a class=\"ds-contact\" href=\"#\">Message us</a></header>",
+      "css": ":host{--ground:#1d1932;--ground-2:#262042;--compound:#f1efe9;--ink:#1d1932;--ink-soft:#4a4466;--on-dark:#efecf7;--on-dark-soft:#bdb6d6;--violet:#6d2ee6;--violet-hi:#a678ff;--form-accent:#2b6fd6;--silver:#c9cbd4;--line-light:#cdc8bd;--radius:14px;--font:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}.ds-top{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--ground);color:var(--on-dark);font-family:var(--font)}.ds-brand{text-decoration:none;color:inherit;min-height:44px;display:flex;align-items:center}.ds-brand b{display:block;font-weight:900;font-size:15px;letter-spacing:.02em;line-height:1.05;text-transform:uppercase}.ds-brand small{display:block;font-size:11px;letter-spacing:.24em;color:var(--on-dark-soft);text-transform:uppercase}.ds-contact{min-height:44px;display:flex;align-items:center;font-weight:800;font-size:16px;text-decoration:none;color:var(--on-dark)}.ds-contact:hover{color:var(--violet-hi)}.ds-contact:focus-visible{outline:3px solid var(--violet-hi);outline-offset:3px;border-radius:6px}"
+    },
+    {
+      "name": "Service Row",
+      "kind": "custom",
+      "refersTo": "service-row",
+      "description": "Tappable service; on hover only the arrow fills violet.",
+      "html": "<ul class=\"ds-services\"><li><a class=\"ds-row\" href=\"#\">Taping &amp; finishing<span class=\"ds-arrow\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></span></a></li></ul>",
+      "css": ":host{--ground:#1d1932;--ground-2:#262042;--compound:#f1efe9;--ink:#1d1932;--ink-soft:#4a4466;--on-dark:#efecf7;--on-dark-soft:#bdb6d6;--violet:#6d2ee6;--violet-hi:#a678ff;--form-accent:#2b6fd6;--silver:#c9cbd4;--line-light:#cdc8bd;--radius:14px;--font:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}.ds-services{list-style:none;margin:0;padding:24px;background:var(--compound)}.ds-services li{border-top:1px solid var(--line-light);border-bottom:1px solid var(--line-light)}.ds-row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px;padding:10px 0;text-decoration:none;color:var(--ink);font:800 clamp(20px,5.6vw,28px)/1.2 var(--font);letter-spacing:-.01em}.ds-row:hover,.ds-row:focus-visible{outline:none;background:none;box-shadow:none}.ds-arrow{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:#e2ded5;color:var(--ink);transition:background-color .18s,color .18s}.ds-row:hover .ds-arrow{background:var(--violet);color:#fff}.ds-row:focus-visible .ds-arrow{background:var(--violet);color:#fff;outline:3px solid var(--violet);outline-offset:3px}"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Estimate form field; blue border and halo on hover and focus.",
+      "html": "<div class=\"ds-light\"><label class=\"ds-label\" for=\"ds-n\">Your name</label><input class=\"ds-input\" id=\"ds-n\" type=\"text\"></div>",
+      "css": ":host{--ground:#1d1932;--ground-2:#262042;--compound:#f1efe9;--ink:#1d1932;--ink-soft:#4a4466;--on-dark:#efecf7;--on-dark-soft:#bdb6d6;--violet:#6d2ee6;--violet-hi:#a678ff;--form-accent:#2b6fd6;--silver:#c9cbd4;--line-light:#cdc8bd;--radius:14px;--font:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}.ds-light{background:var(--compound);padding:24px;font-family:var(--font);color:var(--ink)}.ds-label{display:block;font-weight:800;font-size:16px;margin-bottom:6px}.ds-input{width:100%;box-sizing:border-box;min-height:52px;padding:12px 14px;border:2px solid #8f8899;border-radius:10px;background:#fff;color:var(--ink);font:400 17px/1.4 var(--font);transition:border-color .15s,box-shadow .15s}.ds-input:hover,.ds-input:focus{border-color:var(--form-accent);outline:none;box-shadow:0 0 0 3px rgba(43,111,214,.2)}"
+    },
+    {
+      "name": "Choice Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Form checkbox as a chip; violet when checked, blue on hover/focus.",
+      "html": "<div class=\"ds-light\"><label class=\"ds-chip\"><input type=\"checkbox\" checked><span>Repairs</span></label> <label class=\"ds-chip\"><input type=\"checkbox\"><span>Drywall installation</span></label></div>",
+      "css": ":host{--ground:#1d1932;--ground-2:#262042;--compound:#f1efe9;--ink:#1d1932;--ink-soft:#4a4466;--on-dark:#efecf7;--on-dark-soft:#bdb6d6;--violet:#6d2ee6;--violet-hi:#a678ff;--form-accent:#2b6fd6;--silver:#c9cbd4;--line-light:#cdc8bd;--radius:14px;--font:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}.ds-light{background:var(--compound);padding:24px;font-family:var(--font);color:var(--ink);display:flex;gap:10px;flex-wrap:wrap}.ds-chip{position:relative}.ds-chip input{position:absolute;opacity:0;width:1px;height:1px}.ds-chip span{display:flex;align-items:center;gap:8px;min-height:48px;padding:0 16px;border:2px solid #8f8899;border-radius:10px;background:#fff;font-weight:700;cursor:pointer;transition:border-color .15s,background-color .15s}.ds-chip span::before{content:'';width:18px;height:18px;border-radius:5px;border:2px solid #8f8899;box-sizing:border-box}.ds-chip:hover span,.ds-chip input:focus-visible+span{border-color:var(--form-accent);box-shadow:0 0 0 3px rgba(43,111,214,.2)}.ds-chip input:checked+span{border-color:var(--violet);background:#efe8fd}.ds-chip input:checked+span::before{background:var(--violet);border-color:var(--violet)}"
+    },
+    {
+      "name": "Facebook More Block",
+      "kind": "card",
+      "refersTo": "more-link",
+      "description": "The highlighted link to more work, directly under the gallery.",
+      "html": "<div class=\"ds-dark\"><a class=\"ds-more\" href=\"#\"><span>Click to see more of our work.</span><svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07Z\"/></svg></a></div>",
+      "css": ":host{--ground:#1d1932;--ground-2:#262042;--compound:#f1efe9;--ink:#1d1932;--ink-soft:#4a4466;--on-dark:#efecf7;--on-dark-soft:#bdb6d6;--violet:#6d2ee6;--violet-hi:#a678ff;--form-accent:#2b6fd6;--silver:#c9cbd4;--line-light:#cdc8bd;--radius:14px;--font:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}.ds-dark{background:var(--ground);padding:24px}.ds-more{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 20px;min-height:64px;border:2px solid var(--violet-hi);border-radius:14px;text-decoration:none;font:800 clamp(18px,5vw,22px)/1.2 var(--font);color:#fff;background:rgba(166,120,255,.12);transition:background-color .18s}.ds-more svg{color:var(--violet-hi);flex:none}.ds-more:hover{background:rgba(166,120,255,.24)}.ds-more:focus-visible{outline:3px solid var(--violet-hi);outline-offset:3px}"
+    },
+    {
+      "name": "Stairwell Gallery",
+      "kind": "custom",
+      "refersTo": "work-figure",
+      "description": "Work photos stepping like stair treads; flat placeholders here.",
+      "html": "<div class=\"ds-dark\"><div class=\"ds-stairs\"><figure></figure><figure></figure><figure></figure><figure></figure><figure></figure></div></div>",
+      "css": ":host{--ground:#1d1932;--ground-2:#262042;--compound:#f1efe9;--ink:#1d1932;--ink-soft:#4a4466;--on-dark:#efecf7;--on-dark-soft:#bdb6d6;--violet:#6d2ee6;--violet-hi:#a678ff;--form-accent:#2b6fd6;--silver:#c9cbd4;--line-light:#cdc8bd;--radius:14px;--font:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}.ds-dark{background:var(--ground);padding:24px 24px 24px}.ds-stairs{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:end;margin-top:110px}.ds-stairs figure{margin:0;aspect-ratio:9/14;border-radius:var(--radius);background:linear-gradient(160deg,#c4beb4,#8d8792);box-shadow:0 14px 30px -14px rgba(0,0,0,.6)}.ds-stairs figure:nth-child(2){transform:translateY(-27px)}.ds-stairs figure:nth-child(3){transform:translateY(-54px)}.ds-stairs figure:nth-child(4){transform:translateY(-81px)}.ds-stairs figure:nth-child(5){transform:translateY(-108px)}"
+    },
+    {
+      "name": "Step Number",
+      "kind": "custom",
+      "refersTo": "step-number",
+      "description": "How-it-works step: ink circle numeral, title, muted line.",
+      "html": "<ol class=\"ds-steps\"><li><b>Message us</b><span>Tell us what the job is and where.</span></li></ol>",
+      "css": ":host{--ground:#1d1932;--ground-2:#262042;--compound:#f1efe9;--ink:#1d1932;--ink-soft:#4a4466;--on-dark:#efecf7;--on-dark-soft:#bdb6d6;--violet:#6d2ee6;--violet-hi:#a678ff;--form-accent:#2b6fd6;--silver:#c9cbd4;--line-light:#cdc8bd;--radius:14px;--font:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}.ds-steps{list-style:none;margin:0;padding:24px;background:var(--compound);color:var(--ink);font:400 17px/1.55 var(--font);counter-reset:s}.ds-steps li{display:grid;grid-template-columns:44px 1fr;gap:4px 14px;counter-increment:s}.ds-steps li::before{content:counter(s);grid-row:1/3;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--compound);font-weight:900}.ds-steps b{font-size:20px;font-weight:800;line-height:1.3;align-self:center}.ds-steps span{color:var(--ink-soft)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Last Sanding Pass",
+    "overview": "The page is a stairwell under construction: dark violet-slate sections are the stairwell in shadow, light sections are sanded joint compound, and the two meet on slow, feathered mud edges instead of straight lines. The logo supplies the only color: violet for action, brushed silver for lettering. The hero wall is a working surface you sand by hand.\n\nDensity is phone-first and generous: one column, 56px buttons, 72px service rows, 16px gutters. Hierarchy comes from weight and case alone: heavy uppercase headings over plain sentence-case body, all in the system font stack (a deliberate house choice, not a placeholder). Depth lives in the canvas lighting, not in UI shadows.",
+    "keyCharacteristics": [
+      "Deep violet-slate ground, never black; compound-white light sections.",
+      "Feathered, moving mud edges at every dark/light seam.",
+      "One violet action color; a separate blue used only inside the form.",
+      "System font stack: 900-weight uppercase headings, 400 sentence-case body.",
+      "Flat UI; window light from the top left drives all depth in the wall."
+    ],
+    "rules": [
+      {
+        "name": "The Never-Black Rule",
+        "body": "The darkest surface is Stairwell Shadow (violet-slate). No #000 or near-black grounds.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Accents Rule",
+        "body": "Violet means \"act\" (fill, arrow, checked). Blue means \"you are here in the form\" (hover/focus). Never swap them, and never use violet as the form's hover color.",
+        "section": "colors"
+      },
+      {
+        "name": "The Hover-Only Accent Rule",
+        "body": "Arrows and links sit neutral at rest and take the accent on hover or focus.",
+        "section": "colors"
+      },
+      {
+        "name": "The Caps-Are-Lettering Rule",
+        "body": "Uppercase belongs to headings, the brand lockup and the sign-off, which mirror the logo. Body, labels, buttons and service names stay sentence case.",
+        "section": "typography"
+      },
+      {
+        "name": "The Thumb Rule",
+        "body": "Every tap target is 44px or taller; primary buttons are 56px and full width on phones.",
+        "section": "layout"
+      },
+      {
+        "name": "The Window-Light Rule",
+        "body": "Light comes from the top left. Highlights go up-left, shadows down-right (ridges, spots, the sponge's drop shadow `rgba(40,26,70,.38)` offset 5/7px). Anything new drawn in the wall follows the same light.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Mud Edge Rule",
+        "body": "Dark and light sections never meet on a straight line. Each seam is a 44px SVG with two layers: a gradient feather (opacity 0, .35, .7) at baseline 12 and a solid fill at baseline 25. Each follows three layered sine waves (`SPEED` 0.0016, `AMP` 7), pauses off screen, and holds still under reduced motion. Set `data-from` / `data-to` to the two grounds.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "**Do** join every dark/light section with a mud edge (Mud Edge Rule).",
+      "**Do** keep violet for action and Estimate Blue for form hover/focus only (Two Accents Rule).",
+      "**Do** change only the arrow on service-row hover and focus.",
+      "**Do** light anything drawn in the wall from the top left (Window-Light Rule).",
+      "**Do** run new motion through the shared `Loop` (one rAF, paused off screen, still under reduced motion), with tunables as named constants at the top of its IIFE.",
+      "**Do** keep the system font stack; build hierarchy with weight (400/800/900) and case."
+    ],
+    "donts": [
+      "**Don't** use black or near-black grounds; Stairwell Shadow is the floor.",
+      "**Don't** add thin highlight lines or sheens to UI surfaces or photos. The white ridge highlights inside the wall canvas are the material under raking light, not decoration, and stay.",
+      "**Don't** give buttons, rows or inputs shadows; only work photos are lifted.",
+      "**Don't** style non-interactive labels as chips. Chip styling means a real form checkbox.",
+      "**Don't** put captions under the gallery photos or an intro line above them."
+    ]
+  }
+}
