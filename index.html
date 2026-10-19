@@ -28,6 +28,7 @@
   --on-dark-soft:#bdb6d6;
   --violet:#6d2ee6;        /* logo violet, deep enough for white text */
   --violet-hi:#a678ff;     /* hover / focus on dark */
+  --form-accent:#2b6fd6;   /* form hover/focus: a cool blue, distinct from the violet button fill */
   --silver:#c9cbd4;
   --line-light:#cdc8bd;
   --radius:14px;
@@ -62,7 +63,7 @@ p{margin:0}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-height:44px}
 .brand img{width:52px;height:auto}
 .brand b{display:block;font-weight:900;font-size:15px;letter-spacing:.02em;line-height:1.05;text-transform:uppercase}
-.brand small{display:block;font-size:10.5px;letter-spacing:.26em;color:var(--on-dark-soft);text-transform:uppercase}
+.brand small{display:block;font-size:11px;letter-spacing:.24em;color:var(--on-dark-soft);text-transform:uppercase}
 .top-contact{display:flex;align-items:center;gap:8px;min-height:44px;padding:0 4px;font-weight:800;font-size:16px;text-decoration:none;color:var(--on-dark);white-space:nowrap}
 .top-contact .icon{color:var(--violet-hi)}
 @media (hover:hover){.top-contact:hover{color:var(--violet-hi)}}
@@ -70,13 +71,13 @@ p{margin:0}
 /* ===== Hero ===== */
 .hero{min-height:100svh;display:flex;flex-direction:column;background:var(--ground)}
 .hero-copy{padding:18px var(--gutter) 22px;max-width:1180px;margin:0 auto;width:100%}
-.hero h1{font-size:min(clamp(2.35rem,10.4vw,5.6rem),12svh)}
+.hero h1{color:#dcdee6;font-size:min(clamp(2.35rem,10.4vw,5.6rem),12svh)}
 .promise{margin-top:14px;font-size:clamp(17px,4.6vw,20px);color:var(--on-dark-soft);max-width:34ch}
 .hero-actions{display:grid;gap:10px;margin-top:22px}
-.wall{position:relative;flex:1 1 auto;min-height:300px;background:linear-gradient(180deg,#b3acb9 0,#c4beb4 18%,#c4beb4);touch-action:none;user-select:none;-webkit-user-select:none;overflow:hidden;cursor:grab}
+.wall{position:relative;flex:1 1 auto;min-height:clamp(200px,34svh,300px);background:linear-gradient(180deg,#b3acb9 0,#c4beb4 18%,#c4beb4);touch-action:none;user-select:none;-webkit-user-select:none;overflow:hidden;cursor:grab}
 .wall canvas{position:absolute;inset:0;width:100%;height:100%}
 .wall::before{content:"";position:absolute;inset:0 0 auto;height:46px;background:linear-gradient(180deg,rgba(29,25,50,.55),rgba(29,25,50,0));z-index:2;pointer-events:none}
-.wall-hint{position:absolute;left:var(--gutter);bottom:14px;z-index:2;display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;color:var(--ink);pointer-events:none;text-shadow:0 0 8px var(--compound),0 0 14px var(--compound)}
+.wall-hint{position:absolute;left:var(--gutter);bottom:14px;z-index:2;display:flex;align-items:center;gap:8px;font-size:16px;font-weight:700;color:var(--ink);pointer-events:none;text-shadow:0 0 8px var(--compound),0 0 14px var(--compound)}
 .wall-hint svg{color:var(--violet)}
 @media (min-width:600px){
   .hero-actions{grid-template-columns:auto auto;justify-content:start;gap:14px}
@@ -122,18 +123,21 @@ p{margin:0}
 .work .wrap{padding-top:40px}
 .stairs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
 .stairs figure{margin:0;border-radius:var(--radius);overflow:hidden;background:var(--ground-2);box-shadow:0 14px 30px -14px rgba(0,0,0,.6)}
-.stairs img,.stairs video{width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
+.stairs img,.stairs video{width:100%;height:100%;object-fit:cover;-webkit-user-drag:none}
+.stairs img{pointer-events:none}
+.stairs video{cursor:pointer}
 .stairs .clip{grid-column:1/-1;aspect-ratio:4/5}
 .stairs .still{aspect-ratio:3/4}
-.stairs .still:nth-child(odd){transform:translateY(28px)}   /* each pair steps up like a tread */
+.stairs .still:nth-child(even){transform:translateY(28px)}   /* left column sits lower: the photos climb like treads */
 .more{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:56px;padding:18px 20px;min-height:64px;border:2px solid var(--violet-hi);border-radius:14px;text-decoration:none;font-weight:800;font-size:clamp(18px,5vw,22px);color:#fff;background:rgba(166,120,255,.12);transition:background-color .18s}
+.more span{text-wrap:balance}
 .more .fb{width:28px;height:28px;color:var(--violet-hi)}
 @media (hover:hover){.more:hover{background:rgba(166,120,255,.24)}}
 @media (min-width:1024px){
-  .stairs{grid-template-columns:1.25fr repeat(4,1fr);align-items:end;gap:16px}
+  .stairs{grid-template-columns:repeat(5,1fr);align-items:end;gap:16px}
   .stairs .clip{grid-column:auto;aspect-ratio:9/14}
   .stairs .still{aspect-ratio:9/14}
-  .stairs .still:nth-child(odd){transform:none}
+  .stairs .still:nth-child(even){transform:none}
   .stairs .still:nth-child(2){transform:translateY(-36px)}
   .stairs .still:nth-child(3){transform:translateY(-72px)}
   .stairs .still:nth-child(4){transform:translateY(-108px)}
@@ -143,38 +147,37 @@ p{margin:0}
 }
 
 /* ===== How it works ===== */
-.steps{list-style:none;margin:0;padding:0;display:grid;gap:26px;counter-reset:s}
+.steps{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:26px;counter-reset:s}
 .steps li{display:grid;grid-template-columns:44px 1fr;gap:4px 14px;counter-increment:s}
 .steps li::before{content:counter(s);grid-row:1/3;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--compound);font-weight:900}
 .steps b{font-size:20px;font-weight:800;line-height:1.3;align-self:center}
 .steps span{color:var(--ink-soft)}
-@media (min-width:1024px){.steps{grid-template-columns:repeat(3,1fr);gap:40px}}
 
 /* ===== Estimate form ===== */
-.estimate{padding-top:8px}
-.area{margin-top:12px;font-size:18px;color:var(--ink-soft)}
+.area{margin-top:12px;font-size:17px;color:var(--ink-soft)}
 .form{display:grid;gap:18px;margin-top:28px;max-width:640px}
 .field label,.legend{display:block;font-weight:800;font-size:16px;margin-bottom:6px}
 .opt{font-weight:500;color:var(--ink-soft)}
-.form input[type=text],.form textarea,.form select{width:100%;min-height:52px;padding:12px 14px;border:2px solid #b9b3a6;border-radius:10px;background:#fff;color:var(--ink);font:400 17px/1.4 var(--font);transition:border-color .15s, box-shadow .15s}
+.form input[type=text],.form textarea,.form select{width:100%;min-height:52px;padding:12px 14px;border:2px solid #8f8899;border-radius:10px;background:#fff;color:var(--ink);font:400 17px/1.4 var(--font);transition:border-color .15s, box-shadow .15s}
 .form textarea{min-height:120px;resize:vertical}
 .form select{-webkit-appearance:none;appearance:none;padding-right:44px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6 9 6 6 6-6' fill='none' stroke='%231d1932' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") right 14px center/20px no-repeat}
 .form input[type=text]:hover,.form textarea:hover,.form select:hover,
-.form input[type=text]:focus,.form textarea:focus,.form select:focus{border-color:var(--violet);outline:none;box-shadow:0 0 0 3px rgba(109,46,230,.18)}
+.form input[type=text]:focus,.form textarea:focus,.form select:focus{border-color:var(--form-accent);outline:none;box-shadow:0 0 0 3px rgba(43,111,214,.2)}
 fieldset{border:0;margin:0;padding:0}
 .chips{display:flex;flex-wrap:wrap;gap:10px}
 .chip{position:relative}
 .chip input{position:absolute;opacity:0;width:1px;height:1px}
-.chip span{display:flex;align-items:center;gap:8px;min-height:48px;padding:0 16px;border:2px solid #b9b3a6;border-radius:10px;background:#fff;font-weight:700;cursor:pointer;transition:border-color .15s,background-color .15s}
+.chip span{display:flex;align-items:center;gap:8px;min-height:48px;padding:0 16px;border:2px solid #8f8899;border-radius:10px;background:#fff;font-weight:700;cursor:pointer;transition:border-color .15s,background-color .15s}
 .chip span::before{content:"";width:18px;height:18px;border-radius:5px;border:2px solid #8f8899;flex:none}
-.chip:hover span,.chip input:focus-visible + span{border-color:var(--violet);box-shadow:0 0 0 3px rgba(109,46,230,.18)}
+.chip:hover span,.chip input:focus-visible + span{border-color:var(--form-accent);box-shadow:0 0 0 3px rgba(43,111,214,.2)}
 .chip input:checked + span{border-color:var(--violet);background:#efe8fd}
 .chip input:checked + span::before{background:var(--violet) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat;border-color:var(--violet)}
 .err{display:none;margin-top:6px;color:#a3122f;font-weight:700;font-size:15px}
 .field.bad .err{display:block}
 .field.bad input,.field.bad textarea{border-color:#a3122f}
 .form .btn{width:100%}
-.form .btn-fill:hover,.form .btn-fill:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
+.form .btn:hover,.form .btn:focus-visible{outline:3px solid var(--form-accent);outline-offset:3px}
+.form .btn-line{color:var(--ink);border-color:#8f8899}
 .out{display:none;margin-top:6px;padding:18px;border-radius:12px;background:#fff;border:2px solid var(--line-light)}
 .out.show{display:grid;gap:14px}
 .out pre{margin:0;white-space:pre-wrap;font:500 16px/1.5 var(--font);user-select:all;-webkit-user-select:all;color:var(--ink)}
@@ -187,8 +190,9 @@ fieldset{border:0;margin:0;padding:0}
 
 /* ===== Close + footer ===== */
 .close{padding:0 0 28px;text-align:center}
-.close img{width:min(300px,78vw);margin:0 auto}
-.close p{margin-top:18px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(18px,5vw,24px);color:var(--silver)}
+.close img,.close p{margin-left:var(--gutter);margin-right:var(--gutter)}
+.close img{width:min(240px,64vw);margin:0 auto}
+.close p{text-wrap:balance;margin-top:18px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(18px,5vw,24px);color:var(--silver)}
 footer{padding:28px 0 calc(32px + env(safe-area-inset-bottom));border-top:1px solid rgba(255,255,255,.1);color:var(--on-dark-soft);font-size:15px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;justify-content:space-between}
 footer nav{display:flex;flex-wrap:wrap;gap:6px 22px}
@@ -207,6 +211,7 @@ STORY: Perfect walls, every floor (sand the seams) → what we do → the stairw
 FIRST VIEWPORT: Logo + "Message us" top-right; heavy uppercase benefit headline; their promise in their words; two buttons (estimate, our work); the wall with the sponge sanding itself, taken over by any finger.
 FORM: Phone-first single column; desktop splits hero copy/wall. Feathered mud edges, moving slowly, join every dark and light section.
 -->
+<main>
 <section class="hero" aria-label="Perfect X Contracting">
   <header class="top">
     <a class="brand" href="#top" id="top" aria-label="Perfect X Contracting, back to top">
@@ -220,7 +225,7 @@ FORM: Phone-first single column; desktop splits hero copy/wall. Feathered mud ed
   </header>
   <div class="hero-copy">
     <h1>Perfect walls, every floor.</h1>
-    <p class="promise">Every seam finished with precision and care, from the first board to the last coat.</p>
+    <p class="promise">We finish every seam with precision and care, from the first board to the last coat.</p>
     <div class="hero-actions">
       <a class="btn btn-fill" href="#estimate">Get a free estimate</a>
       <a class="btn btn-line" href="#work">See our work</a>
@@ -234,7 +239,6 @@ FORM: Phone-first single column; desktop splits hero copy/wall. Feathered mud ed
   </div>
 </section>
 
-<main>
   <section class="light" aria-labelledby="h-services">
     <svg class="edge" data-edge data-from="#1d1932" data-to="#f1efe9" viewBox="0 0 1200 44" preserveAspectRatio="none" aria-hidden="true"></svg>
     <div class="wrap section svc-grid">
@@ -265,22 +269,18 @@ FORM: Phone-first single column; desktop splits hero copy/wall. Feathered mud ed
     </div>
   </section>
 
-  <section class="light" aria-labelledby="h-how">
+  <section class="light" aria-labelledby="h-est">
     <svg class="edge" data-edge data-from="#1d1932" data-to="#f1efe9" viewBox="0 0 1200 44" preserveAspectRatio="none" aria-hidden="true"></svg>
-    <div class="wrap section">
-      <h2 id="h-how">How it works</h2>
-      <ol class="steps">
-        <li><b>Message us</b><span>Tell us what the job is and where. A photo of the room helps.</span></li>
-        <li><b>Free estimate</b><span>We look it over and give you a straight price before any work starts.</span></li>
-        <li><b>We finish it right</b><span>Quality workmanship and attention to detail from start to finish.</span></li>
-      </ol>
-    </div>
-
     <div class="wrap section estimate" id="estimate">
       <div class="est-grid">
         <div>
           <h2 id="h-est">Free estimate</h2>
-          <p class="area">Serving Vermont.</p>
+          <p class="area">Serving Vermont. We reply on Messenger.</p>
+          <ol class="steps">
+            <li><b>Message us</b><span>Tell us what the job is and where. A photo of the room helps.</span></li>
+            <li><b>Free estimate</b><span>We look over what you send and get back to you with a free estimate.</span></li>
+            <li><b>We finish it right</b><span>Quality workmanship and attention to detail from start to finish, the same care we put into four floors of stairwell.</span></li>
+          </ol>
         </div>
         <form class="form" id="estForm" novalidate>
           <div class="field" id="f-name">
@@ -295,7 +295,7 @@ FORM: Phone-first single column; desktop splits hero copy/wall. Feathered mud ed
           <fieldset class="field">
             <legend class="legend">What do you need? <span class="opt">(optional)</span></legend>
             <div class="chips">
-              <label class="chip"><input type="checkbox" name="svc" value="Drywall installation"><span>Installation</span></label>
+              <label class="chip"><input type="checkbox" name="svc" value="Drywall installation"><span>Drywall installation</span></label>
               <label class="chip"><input type="checkbox" name="svc" value="Taping &amp; finishing"><span>Taping &amp; finishing</span></label>
               <label class="chip"><input type="checkbox" name="svc" value="Repairs"><span>Repairs</span></label>
             </div>
@@ -328,7 +328,7 @@ FORM: Phone-first single column; desktop splits hero copy/wall. Feathered mud ed
 
 <div class="close">
   <svg class="edge" data-edge data-from="#f1efe9" data-to="#1d1932" viewBox="0 0 1200 44" preserveAspectRatio="none" aria-hidden="true" style="margin-bottom:44px"></svg>
-  <img src="img/logo.webp" width="480" height="400" loading="lazy" alt="Perfect X Contracting">
+  <img src="img/logo.webp" width="720" height="600" loading="lazy" alt="Perfect X Contracting">
   <p>Quality work. Reliable service.</p>
 </div>
 <footer>
@@ -382,7 +382,7 @@ var Loop = (function(){
   var cBase = document.getElementById('wallBase'), cRough = document.getElementById('wallRough'), cFx = document.getElementById('wallFx');
   var gB = cBase.getContext('2d'), gR = cRough.getContext('2d'), gF = cFx.getContext('2d');
   var hint = document.getElementById('wallHint').querySelector('span');
-  var W = 0, H = 0, DPR = 1, phone = true, pristine = null, layout = null, sprite = null;
+  var W = 0, H = 0, DPR = 1, phone = true, pristine = null, layout = null, sprite = null, eraser = null;
   var dust = [], frameN = 0;
   var sp = { x: 0, y: 0, vx: 0, vy: 0, ang: 0 };          // sponge (spring-follows its target)
   var ptr = { on: false, x: 0, y: 0, cx: 0, cy: 0, px: 0, py: 0, vx: 0, vy: 0, last: -1e9 };
@@ -400,7 +400,7 @@ var Loop = (function(){
       if (Math.abs(x - bx) < bb * 0.8) continue;
       for (var y = H * 0.14; y < H - 12; y += Math.max(54, H * 0.17)) {
         if (Math.abs(y - hy) < hb * 0.75) continue;
-        spots.push({ x: x + rnd(-3, 3), y: y + rnd(-4, 4), w: rnd(20, 28), h: rnd(14, 19) });
+        spots.push({ x: x + rnd(-4, 4), y: y + rnd(-7, 7), w: rnd(14, 19), h: rnd(10, 13) });
       }
     }
     return { s: s, hy: hy, hb: hb, bx: bx, bb: bb, spots: spots };
@@ -440,7 +440,7 @@ var Loop = (function(){
     gr.addColorStop(.7, 'rgba(242,241,236,.92)'); gr.addColorStop(1, 'rgba(242,241,236,0)');
     g.fillStyle = gr; g.fillRect(L.bx - L.bb, 0, L.bb * 2, H);
     g.filter = 'blur(3px)'; g.fillStyle = 'rgba(242,241,236,.9)';
-    L.spots.forEach(function(p){ blob(g, p.x, p.y, p.w * 1.25, p.h * 1.25); g.fill(); });
+    L.spots.forEach(function(p){ blob(g, p.x, p.y, p.w * 1.15, p.h * 1.15); g.fill(); });
     g.filter = 'none';
   }
 
@@ -473,25 +473,34 @@ var Loop = (function(){
     // hard-edged, slightly cooler unsanded coats
     var hh = L.hb * .62, bw = L.bb * .62;
     g.fillStyle = mud;
-    g.fillRect(0, L.hy - hh, W, hh * 2);
-    g.fillRect(L.bx - bw, 0, bw * 2, H);
+    // coat edges wobble like a knife pass; the ridges below follow the same wobble
+    function wob(t, amp, seed){ return Math.sin(t * 9 + seed) * amp + Math.sin(t * 23 + seed * 2) * amp * .4; }
+    var n = 60, k;
+    g.beginPath();
+    for (k = 0; k <= n; k++) g.lineTo(-10 + (W + 20) * k / n, L.hy - hh + wob(k / n, 3.2, 1));
+    for (k = n; k >= 0; k--) g.lineTo(-10 + (W + 20) * k / n, L.hy + hh + wob(k / n, 3.2, 2));
+    g.fill();
+    g.beginPath();
+    for (k = 0; k <= n; k++) g.lineTo(L.bx - bw - wob(k / n, 3.2, 4), -10 + (H + 20) * k / n);
+    for (k = n; k >= 0; k--) g.lineTo(L.bx + bw - wob(k / n, 3.2, 5), -10 + (H + 20) * k / n);
+    g.fill();
     // trowel streaks in the coat
     for (var i = 0; i < 9; i++) {
       var y = L.hy - hh + 6 + Math.random() * (hh * 2 - 12);
       g.strokeStyle = 'rgba(150,140,128,.16)'; g.lineWidth = 1;
       g.beginPath(); g.moveTo(rnd(-20, W * .3), y); g.bezierCurveTo(W * .3, y + rnd(-3, 3), W * .6, y + rnd(-3, 3), rnd(W * .7, W + 20), y + rnd(-2, 2)); g.stroke();
     }
-    for (i = 0; i < 6; i++) {
-      var x = L.bx - bw + 5 + Math.random() * (bw * 2 - 10);
-      g.strokeStyle = 'rgba(150,140,128,.16)';
-      g.beginPath(); g.moveTo(x, rnd(-20, H * .3)); g.bezierCurveTo(x + rnd(-3, 3), H * .4, x + rnd(-3, 3), H * .7, x + rnd(-2, 2), H + 10); g.stroke();
+    for (i = 0; i < 3; i++) {
+      var x = L.bx - bw + 6 + Math.random() * (bw * 2 - 12), y0 = rnd(0, H * .6);
+      g.strokeStyle = 'rgba(150,140,128,.09)'; g.lineWidth = 1;
+      g.beginPath(); g.moveTo(x, y0); g.bezierCurveTo(x + rnd(-2, 2), y0 + H * .12, x + rnd(-2, 2), y0 + H * .22, x + rnd(-2, 2), y0 + H * rnd(.25, .4)); g.stroke();
     }
     // lap ridges at every coat edge
-    ridgeLine(g, -10, L.hy - hh, W + 10, L.hy - hh, 1.6, 1);
-    ridgeLine(g, -10, L.hy + hh, W + 10, L.hy + hh, 1.6, 2);
-    ridgeLine(g, -10, L.hy - hh * .35, W + 10, L.hy - hh * .35, 1.1, 3);
-    ridgeLine(g, L.bx - bw, -10, L.bx - bw, H + 10, 1.6, 4);
-    ridgeLine(g, L.bx + bw, -10, L.bx + bw, H + 10, 1.6, 5);
+    ridgeLine(g, -10, L.hy - hh, W + 10, L.hy - hh, 3.2, 1);
+    ridgeLine(g, -10, L.hy + hh, W + 10, L.hy + hh, 3.2, 2);
+    ridgeLine(g, -10, L.hy - hh * .35, W + 10, L.hy - hh * .35, 2.2, 3);
+    ridgeLine(g, L.bx - bw, -10, L.bx - bw, H + 10, 3.2, 4);
+    ridgeLine(g, L.bx + bw, -10, L.bx + bw, H + 10, 3.2, 5);
     // pinholes and crumbs
     for (i = 0; i < W * H / 1400; i++) {
       var px = Math.random() * W, py = Math.random() < .6 ? L.hy + rnd(-hh, hh) : rnd(0, H);
@@ -502,9 +511,9 @@ var Loop = (function(){
     // screw spots: hard-edged dabs with a knife tail and a ridge
     L.spots.forEach(function(p){
       // raking light: a soft lit edge up-left, a soft shadow down-right
-      g.shadowColor = 'rgba(255,255,255,.75)'; g.shadowBlur = 1.5; g.shadowOffsetX = -.8; g.shadowOffsetY = -.9;
+      g.shadowColor = 'rgba(255,255,255,.7)'; g.shadowBlur = 3; g.shadowOffsetX = -.4; g.shadowOffsetY = -.5;
       g.fillStyle = mud; blob(g, p.x, p.y, p.w, p.h); g.fill();
-      g.shadowColor = 'rgba(100,88,76,.38)'; g.shadowBlur = 2; g.shadowOffsetX = 1; g.shadowOffsetY = 1.4;
+      g.shadowColor = 'rgba(100,88,76,.3)'; g.shadowBlur = 3; g.shadowOffsetX = .4; g.shadowOffsetY = .6;
       blob(g, p.x, p.y, p.w, p.h); g.fill();
       g.shadowColor = 'transparent';
       g.strokeStyle = 'rgba(150,140,128,.28)'; g.lineWidth = 1;
@@ -540,14 +549,25 @@ var Loop = (function(){
     if (nw === W && nh === H) return;            // the address bar fires resize mid-drag: keep the sanding
     W = nw; H = nh; phone = W < 700;
     DPR = Math.min(window.devicePixelRatio || 1, phone ? 1.5 : 2);
-    if (!phone) { SPONGE_W = 96; SPONGE_H = 56; }
+    SPONGE_W = phone ? 74 : 96; SPONGE_H = phone ? 44 : 56;
     [cBase, cRough, cFx].forEach(function(c){ c.width = Math.round(W * DPR); c.height = Math.round(H * DPR); });
-    layout = plan(); drawBase(); pristine = drawRough(); sprite = makeSprite();
+    layout = plan(); drawBase(); pristine = drawRough(); sprite = makeSprite(); eraser = makeEraser();
     gR.setTransform(1, 0, 0, 1, 0, 0); gR.clearRect(0, 0, cRough.width, cRough.height); gR.drawImage(pristine, 0, 0);
     gF.setTransform(DPR, 0, 0, DPR, 0, 0);
     if (!sp.x) { sp.x = W * .3; sp.y = layout.hy; }
     // a sanded patch so the contrast reads in a still frame too
     for (var i = 0; i < 12; i++) sandAt(W * (.12 + i * .02), layout.hy + Math.sin(i) * 10, 0, 1);
+  }
+
+  function makeEraser(){
+    // the sponge's footprint, feathered once; sanding stamps it instead of blurring every stroke
+    var pad = 6, c = document.createElement('canvas');
+    c.width = Math.ceil((SPONGE_W + pad * 2) * DPR); c.height = Math.ceil((SPONGE_H + pad * 2) * DPR);
+    var g = c.getContext('2d'); g.scale(DPR, DPR);
+    g.filter = 'blur(2px)'; g.fillStyle = '#000'; g.beginPath();
+    g.roundRect ? g.roundRect(pad, pad, SPONGE_W, SPONGE_H, 10) : g.rect(pad, pad, SPONGE_W, SPONGE_H);
+    g.fill();
+    return c;
   }
 
   function sandAt(x, y, ang, amt){
@@ -556,9 +576,7 @@ var Loop = (function(){
     gR.globalCompositeOperation = 'destination-out';
     gR.translate(x, y); gR.rotate(ang);
     gR.globalAlpha = amt;
-    gR.beginPath();
-    gR.roundRect ? gR.roundRect(-SPONGE_W / 2, -SPONGE_H / 2, SPONGE_W, SPONGE_H, 10) : gR.rect(-SPONGE_W / 2, -SPONGE_H / 2, SPONGE_W, SPONGE_H);
-    gR.filter = 'blur(2px)'; gR.fill();
+    gR.drawImage(eraser, -SPONGE_W / 2 - 6, -SPONGE_H / 2 - 6, eraser.width / DPR, eraser.height / DPR);
     gR.restore();
   }
 
@@ -616,7 +634,7 @@ var Loop = (function(){
     // fx layer: light, dust, sponge
     gF.clearRect(0, 0, W, H);
     var lg = gF.createLinearGradient(0, 0, W * .9, H * .5);
-    lg.addColorStop(0, 'rgba(255,252,240,.16)'); lg.addColorStop(.5, 'rgba(255,252,240,.05)'); lg.addColorStop(1, 'rgba(255,252,240,0)');
+    lg.addColorStop(0, 'rgba(255,250,235,.26)'); lg.addColorStop(.5, 'rgba(255,250,235,.08)'); lg.addColorStop(1, 'rgba(255,252,240,0)');
     gF.fillStyle = lg; gF.fillRect(0, 0, W, H);
     var pvx = ptr.vx, pvy = ptr.vy;
     for (i = dust.length - 1; i >= 0; i--) {
@@ -682,7 +700,11 @@ var Loop = (function(){
     var NS = 'http://www.w3.org/2000/svg';
     svg.style.background = svg.dataset.from;
     var feather = document.createElementNS(NS, 'path'), solid = document.createElementNS(NS, 'path');
-    feather.setAttribute('fill', svg.dataset.to); feather.setAttribute('opacity', '.55');
+    var gid = 'feather' + idx, defs = document.createElementNS(NS, 'defs'), lg = document.createElementNS(NS, 'linearGradient');
+    lg.setAttribute('id', gid); lg.setAttribute('x1', '0'); lg.setAttribute('y1', '0'); lg.setAttribute('x2', '0'); lg.setAttribute('y2', '1');
+    [['0', '0'], ['.55', '.35'], ['1', '.7']].forEach(function(st){ var e = document.createElementNS(NS, 'stop'); e.setAttribute('offset', st[0]); e.setAttribute('stop-color', svg.dataset.to); e.setAttribute('stop-opacity', st[1]); lg.appendChild(e); });
+    defs.appendChild(lg); svg.appendChild(defs);
+    feather.setAttribute('fill', 'url(#' + gid + ')');
     solid.setAttribute('fill', svg.dataset.to);
     svg.appendChild(feather); svg.appendChild(solid);
     function d(t, base, amp, ph){
@@ -693,7 +715,7 @@ var Loop = (function(){
       }
       return s + ' L1200 44 Z';
     }
-    function draw(t){ feather.setAttribute('d', d(t, 20, AMP, idx)); solid.setAttribute('d', d(t, 25, AMP * .9, idx + .35)); }
+    function draw(t){ feather.setAttribute('d', d(t, 12, AMP, idx)); solid.setAttribute('d', d(t, 25, AMP * .9, idx + .35)); }
     draw(0);
     if (!Loop.reduce) Loop.add(svg, draw);
   });
@@ -702,8 +724,11 @@ var Loop = (function(){
 /* ===== Lazy video: play only while on screen ===== */
 (function(){
   document.querySelectorAll('[data-lazyvideo]').forEach(function(v){
+    var held = false;   // paused by the visitor: stay paused
+    if (Loop.reduce) v.controls = true;
+    else v.addEventListener('click', function(){ if (v.paused) { held = false; v.play().catch(function(){}); } else { held = true; v.pause(); } });
     new IntersectionObserver(function(es){
-      if (es[0].isIntersecting) { if (v.preload === 'none') { v.preload = 'auto'; } if (!matchMedia('(prefers-reduced-motion: reduce)').matches) v.play().catch(function(){}); }
+      if (es[0].isIntersecting) { if (v.preload === 'none') { v.preload = 'auto'; } if (!Loop.reduce && !held) v.play().catch(function(){}); }
       else v.pause();
     }, { rootMargin: '120px' }).observe(v);
   });
@@ -736,7 +761,7 @@ var Loop = (function(){
     return ok;
   }
   ['name', 'job'].forEach(function(id){ document.getElementById(id).addEventListener('input', function(){ if (document.getElementById('f-' + id).classList.contains('bad')) req(id); }); });
-  form.addEventListener('input', function(){ if (out.classList.contains('show')) { out.classList.remove('show'); } });
+  form.addEventListener('input', function(){ if (out.classList.contains('show')) { out.classList.remove('show'); send.classList.replace('btn-line', 'btn-fill'); } });
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var a = req('name'), b = req('job');
@@ -751,6 +776,7 @@ var Loop = (function(){
     if (CONTACT.PHONE) { location.href = 'sms:+1' + CONTACT.PHONE.replace(/\D/g, '') + '?&body=' + encodeURIComponent(text); return; }
     msg.textContent = text;
     out.classList.add('show');
+    send.classList.replace('btn-fill', 'btn-line');
     var hold = 'Press and hold the message to copy it, then open Messenger, paste it in and send. A photo of the room helps.';
     note.textContent = hold;
     if (navigator.clipboard && window.isSecureContext) {

@@ -1,0 +1,32 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "roboto",
+        "createdAt": "2026-10-19T13:54:27.136Z",
+        "reason": "pitch-site house style: system font stack (ellie-taste.md §2); Roboto is only the Android fallback"
+      },
+      {
+        "rule": "all-caps-body",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-19T13:54:27.249Z",
+        "reason": "only the 31-char closing sign-off 'Quality work. Reliable service.' is caps, a short label in the logo's lettering"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-19T13:54:27.347Z",
+        "reason": "services list top border is a hairline list rule; rows have 72px min-height and are vertically centred"
+      }
+    ]
+  }
+}
