@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Perfect X Contracting · Drywall in Vermont</title>
+<meta name="description" content="Drywall installation, taping and finishing, and repairs in Vermont. Message Perfect X Contracting for a free estimate.">
+<meta name="theme-color" content="#1d1932">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Perfect X Contracting · Drywall in Vermont">
+<meta property="og:description" content="Drywall installation, taping and finishing, and repairs. Message us for a free estimate.">
+<meta property="og:url" content="https://10elizabethbell.github.io/perfectXContracting/">
+<meta property="og:image" content="https://10elizabethbell.github.io/perfectXContracting/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<style>
+/* ===== Tokens ===== */
+:root{
+  --ground:#1d1932;        /* deep violet-slate: the stairwell in shadow (never black) */
+  --ground-2:#262042;
+  --compound:#f1efe9;      /* joint compound, sanded */
+  --board:#d5d0c7;         /* drywall paper */
+  --ink:#1d1932;
+  --ink-soft:#4a4466;
+  --on-dark:#efecf7;
+  --on-dark-soft:#bdb6d6;
+  --violet:#6d2ee6;        /* logo violet, deep enough for white text */
+  --violet-hi:#a678ff;     /* hover / focus on dark */
+  --silver:#c9cbd4;
+  --line-light:#cdc8bd;
+  --radius:14px;
+  --gutter:16px;
+  --font:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;overscroll-behavior-y:none;scroll-behavior:smooth;scroll-padding-top:12px}
+body{margin:0;background:var(--ground);color:var(--on-dark);font:400 17px/1.55 var(--font)}
+img,video,canvas,svg{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--violet);color:#fff}
+:focus-visible{outline:3px solid var(--violet-hi);outline-offset:3px;border-radius:6px}
+.light :focus-visible{outline-color:var(--violet)}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 var(--gutter)}
+h1,h2{font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:.98;margin:0;text-wrap:balance}
+h2{font-size:clamp(2rem,8.4vw,3.6rem)}
+p{margin:0}
+.icon{width:20px;height:20px;flex:none}
+
+/* ===== Buttons ===== */
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 24px;border-radius:12px;font:800 17px/1 var(--font);text-decoration:none;border:2px solid var(--violet);cursor:pointer;transition:background-color .18s, border-color .18s, color .18s}
+.btn-fill{background:var(--violet);color:#fff}
+.btn-line{background:transparent;color:var(--on-dark);border-color:var(--silver)}
+@media (hover:hover){
+  .btn-fill:hover{background:#5a20cf;border-color:#5a20cf}
+  .btn-line:hover{border-color:var(--violet-hi);color:#fff}
+}
+
+/* ===== Header ===== */
+.top{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px var(--gutter);max-width:1180px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-height:44px}
+.brand img{width:52px;height:auto}
+.brand b{display:block;font-weight:900;font-size:15px;letter-spacing:.02em;line-height:1.05;text-transform:uppercase}
+.brand small{display:block;font-size:10.5px;letter-spacing:.26em;color:var(--on-dark-soft);text-transform:uppercase}
+.top-contact{display:flex;align-items:center;gap:8px;min-height:44px;padding:0 4px;font-weight:800;font-size:16px;text-decoration:none;color:var(--on-dark);white-space:nowrap}
+.top-contact .icon{color:var(--violet-hi)}
+@media (hover:hover){.top-contact:hover{color:var(--violet-hi)}}
+
+/* ===== Hero ===== */
+.hero{min-height:100svh;display:flex;flex-direction:column;background:var(--ground)}
+.hero-copy{padding:18px var(--gutter) 22px;max-width:1180px;margin:0 auto;width:100%}
+.hero h1{font-size:clamp(2.35rem,10.4vw,5.6rem)}
+.promise{margin-top:14px;font-size:clamp(17px,4.6vw,20px);color:var(--on-dark-soft);max-width:34ch}
+.hero-actions{display:grid;gap:10px;margin-top:22px}
+.wall{position:relative;flex:1 1 auto;min-height:300px;background:linear-gradient(180deg,#b3acb9 0,#c4beb4 18%,#c4beb4);touch-action:none;user-select:none;-webkit-user-select:none;overflow:hidden;cursor:grab}
+.wall canvas{position:absolute;inset:0;width:100%;height:100%}
+.wall::before{content:"";position:absolute;inset:0 0 auto;height:46px;background:linear-gradient(180deg,rgba(29,25,50,.55),rgba(29,25,50,0));z-index:2;pointer-events:none}
+.wall-hint{position:absolute;left:var(--gutter);bottom:14px;z-index:2;display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;color:var(--ink);pointer-events:none;text-shadow:0 0 8px var(--compound),0 0 14px var(--compound)}
+.wall-hint svg{color:var(--violet)}
+@media (min-width:1024px){
+  .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);grid-template-rows:auto 1fr;min-height:min(100svh,900px)}
+  .hero .top{grid-column:1/-1;width:100%}
+  .hero-copy{align-self:center;padding:24px 40px 64px max(var(--gutter),calc((100vw - 1180px)/2 + var(--gutter)))}
+  .hero-actions{grid-template-columns:auto auto;justify-content:start;gap:14px}
+  .wall{border-radius:18px 0 0 0;margin-top:8px}
+  .wall::before{display:none}
+}
+
+/* ===== Mud-edge dividers ===== */
+.edge{display:block;width:100%;height:44px;margin-bottom:-1px}
+.edge path{transition:none}
+
+/* ===== Light sections ===== */
+.light{background:var(--compound);color:var(--ink)}
+.section{padding-top:56px;padding-bottom:64px}
+.section h2 + *{margin-top:24px}
+
+/* ===== Services ===== */
+.services{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-light)}
+.services li{border-bottom:1px solid var(--line-light)}
+.row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px;padding:10px 0;text-decoration:none;font-weight:800;font-size:clamp(20px,5.6vw,28px);letter-spacing:-.01em}
+.arrow{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:#e2ded5;color:var(--ink);flex:none;transition:background-color .18s,color .18s}
+.row:hover,.row:focus-visible{outline:none;background:none;box-shadow:none}
+@media (hover:hover){.row:hover .arrow{background:var(--violet);color:#fff}}
+.row:focus-visible .arrow{background:var(--violet);color:#fff;outline:3px solid var(--violet);outline-offset:3px}
+@media (min-width:1024px){
+  .svc-grid{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:start}
+  .svc-grid h2 + *{margin-top:0}
+}
+
+/* ===== Work ===== */
+.work{padding:0 0 64px}
+.work .wrap{padding-top:40px}
+.stairs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+.stairs figure{margin:0;border-radius:var(--radius);overflow:hidden;background:var(--ground-2);box-shadow:0 14px 30px -14px rgba(0,0,0,.6)}
+.stairs img,.stairs video{width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
+.stairs .clip{grid-column:1/-1;aspect-ratio:4/5}
+.stairs .still{aspect-ratio:3/4}
+.stairs .still:nth-child(odd){transform:translateY(28px)}   /* each pair steps up like a tread */
+.more{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:56px;padding:18px 20px;min-height:64px;border:2px solid var(--violet-hi);border-radius:14px;text-decoration:none;font-weight:800;font-size:clamp(18px,5vw,22px);color:#fff;background:rgba(166,120,255,.12);transition:background-color .18s}
+.more .fb{width:28px;height:28px;color:var(--violet-hi)}
+@media (hover:hover){.more:hover{background:rgba(166,120,255,.24)}}
+@media (min-width:1024px){
+  .stairs{grid-template-columns:1.25fr repeat(4,1fr);align-items:end;gap:16px}
+  .stairs .clip{grid-column:auto;aspect-ratio:9/14}
+  .stairs .still{aspect-ratio:9/14}
+  .stairs .still:nth-child(odd){transform:none}
+  .stairs .still:nth-child(2){transform:translateY(-36px)}
+  .stairs .still:nth-child(3){transform:translateY(-72px)}
+  .stairs .still:nth-child(4){transform:translateY(-108px)}
+  .stairs .still:nth-child(5){transform:translateY(-144px)}
+  .stairs{margin-top:150px}
+  .more{max-width:520px}
+}
+
+/* ===== How it works ===== */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:26px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:44px 1fr;gap:4px 14px;counter-increment:s}
+.steps li::before{content:counter(s);grid-row:1/3;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--compound);font-weight:900}
+.steps b{font-size:20px;font-weight:800;line-height:1.3;align-self:center}
+.steps span{color:var(--ink-soft)}
+@media (min-width:1024px){.steps{grid-template-columns:repeat(3,1fr);gap:40px}}
+
+/* ===== Estimate form ===== */
+.estimate{padding-top:8px}
+.area{margin-top:12px;font-size:18px;color:var(--ink-soft)}
+.form{display:grid;gap:18px;margin-top:28px;max-width:640px}
+.field label,.legend{display:block;font-weight:800;font-size:16px;margin-bottom:6px}
+.opt{font-weight:500;color:var(--ink-soft)}
+.form input[type=text],.form textarea,.form select{width:100%;min-height:52px;padding:12px 14px;border:2px solid #b9b3a6;border-radius:10px;background:#fff;color:var(--ink);font:400 17px/1.4 var(--font);transition:border-color .15s, box-shadow .15s}
+.form textarea{min-height:120px;resize:vertical}
+.form input[type=text]:hover,.form textarea:hover,.form select:hover,
+.form input[type=text]:focus,.form textarea:focus,.form select:focus{border-color:var(--violet);outline:none;box-shadow:0 0 0 3px rgba(109,46,230,.18)}
+fieldset{border:0;margin:0;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;width:1px;height:1px}
+.chip span{display:flex;align-items:center;gap:8px;min-height:48px;padding:0 16px;border:2px solid #b9b3a6;border-radius:10px;background:#fff;font-weight:700;cursor:pointer;transition:border-color .15s,background-color .15s}
+.chip span::before{content:"";width:18px;height:18px;border-radius:5px;border:2px solid #8f8899;flex:none}
+.chip:hover span,.chip input:focus-visible + span{border-color:var(--violet);box-shadow:0 0 0 3px rgba(109,46,230,.18)}
+.chip input:checked + span{border-color:var(--violet);background:#efe8fd}
+.chip input:checked + span::before{background:var(--violet) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat;border-color:var(--violet)}
+.err{display:none;margin-top:6px;color:#a3122f;font-weight:700;font-size:15px}
+.field.bad .err{display:block}
+.field.bad input,.field.bad textarea{border-color:#a3122f}
+.form .btn{width:100%}
+.form .btn-fill:hover,.form .btn-fill:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
+.out{display:none;margin-top:6px;padding:18px;border-radius:12px;background:#fff;border:2px solid var(--line-light)}
+.out.show{display:grid;gap:14px}
+.out pre{margin:0;white-space:pre-wrap;font:500 16px/1.5 var(--font);user-select:all;-webkit-user-select:all;color:var(--ink)}
+.out .note{color:var(--ink-soft)}
+@media (min-width:1024px){
+  .est-grid{display:grid;grid-template-columns:5fr 7fr;gap:56px}
+  .form{margin-top:0}
+  .form .btn{width:auto;justify-self:start}
+}
+
+/* ===== Close + footer ===== */
+.close{padding:0 0 28px;text-align:center}
+.close img{width:min(300px,78vw);margin:0 auto}
+.close p{margin-top:18px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(18px,5vw,24px);color:var(--silver)}
+footer{padding:28px 0 calc(32px + env(safe-area-inset-bottom));border-top:1px solid rgba(255,255,255,.1);color:var(--on-dark-soft);font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;justify-content:space-between}
+footer nav{display:flex;flex-wrap:wrap;gap:6px 22px}
+footer a{display:inline-flex;align-items:center;gap:8px;min-height:44px;text-decoration:none;font-weight:700;color:var(--on-dark)}
+@media (hover:hover){footer a:hover{color:var(--violet-hi)}}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<!--
+DIRECTION CONTRACT
+THESIS: Perfect X finishes drywall so cleanly the seams vanish; the page lets you do that final sanding pass yourself.
+OWN-WORLD: A taped-and-spotted wall in their four-story stairwell, under the window light: violet sanding sponge from the logo's X, compound dust drifting in the light, the dark violet-slate of the stairwell in shadow, brushed-silver lettering from the logo.
+STORY: Perfect walls, every floor (sand the seams) → what we do → the stairwell job, stepping up like stairs → Facebook for more → how it works → free estimate by Messenger → logo and their sign-off "Quality work. Reliable service."
+FIRST VIEWPORT: Logo + "Message us" top-right; heavy uppercase benefit headline; their promise in their words; two buttons (estimate, our work); the wall with the sponge sanding itself, taken over by any finger.
+FORM: Phone-first single column; desktop splits hero copy/wall. Feathered mud edges, moving slowly, join every dark and light section.
+-->
+<section class="hero" aria-label="Perfect X Contracting">
+  <header class="top">
+    <a class="brand" href="#top" id="top" aria-label="Perfect X Contracting, back to top">
+      <img src="img/mark.webp" width="240" height="158" alt="">
+      <span><b>Perfect X</b><small>Contracting</small></span>
+    </a>
+    <a class="top-contact" id="topContact" href="https://m.me/61595304966148">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.2 5.42 3.14 7.16.16.15.26.35.27.57l.05 1.78a.8.8 0 0 0 1.12.71l1.98-.87a.8.8 0 0 1 .53-.04c.91.25 1.88.39 2.91.39 5.64 0 10-4.13 10-9.7S17.64 2 12 2Zm6 7.46-2.94 4.66a1.5 1.5 0 0 1-2.17.4l-2.34-1.75a.6.6 0 0 0-.72 0l-3.16 2.4c-.42.32-.97-.18-.69-.63l2.94-4.66a1.5 1.5 0 0 1 2.17-.4l2.34 1.75a.6.6 0 0 0 .72 0l3.16-2.4c.42-.32.97.18.69.63Z"/></svg>
+      <span>Message us</span>
+    </a>
+  </header>
+  <div class="hero-copy">
+    <h1>Perfect walls, every floor.</h1>
+    <p class="promise">Every seam finished with precision and care, from the first board to the last coat.</p>
+    <div class="hero-actions">
+      <a class="btn btn-fill" href="#estimate">Get a free estimate</a>
+      <a class="btn btn-line" href="#work">See our work</a>
+    </div>
+  </div>
+  <div class="wall" id="wall" role="img" aria-label="A drywall wall with taped and spotted seams. Drag across it to sand the seams smooth.">
+    <canvas id="wallBase"></canvas>
+    <canvas id="wallRough"></canvas>
+    <canvas id="wallFx"></canvas>
+    <p class="wall-hint" id="wallHint" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 11V5.5a1.5 1.5 0 0 1 3 0V11m0-1.5a1.5 1.5 0 0 1 3 0V11m0-.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-.8a6 6 0 0 1-4.6-2.2L4 15.5a1.6 1.6 0 0 1 2.4-2.1L9 15.5"/></svg><span>Drag to sand the seams smooth</span></p>
+  </div>
+</section>
+
+<main>
+  <section class="light" aria-labelledby="h-services">
+    <svg class="edge" data-edge data-from="#1d1932" data-to="#f1efe9" viewBox="0 0 1200 44" preserveAspectRatio="none" aria-hidden="true"></svg>
+    <div class="wrap section svc-grid">
+      <h2 id="h-services">What we do</h2>
+      <ul class="services">
+        <li><a class="row" href="#estimate" data-service="Drywall installation">Drywall installation<span class="arrow"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a></li>
+        <li><a class="row" href="#estimate" data-service="Taping &amp; finishing">Taping &amp; finishing<span class="arrow"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a></li>
+        <li><a class="row" href="#estimate" data-service="Repairs">Repairs<span class="arrow"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="work" id="work" aria-labelledby="h-work">
+    <svg class="edge" data-edge data-from="#f1efe9" data-to="#1d1932" viewBox="0 0 1200 44" preserveAspectRatio="none" aria-hidden="true"></svg>
+    <div class="wrap">
+      <h2 id="h-work">Four stories of stairwell</h2>
+      <div class="stairs">
+        <figure class="clip"><video src="img/walkthrough.mp4" poster="img/poster.webp" muted loop playsinline preload="none" aria-label="Looking up a four-story stairwell with taped and spotted drywall" data-lazyvideo></video></figure>
+        <figure class="still"><img src="img/stair-up.webp" width="720" height="1280" loading="lazy" decoding="async" draggable="false" alt="Four floors of stairwell walls, taped and spotted, seen from below"></figure>
+        <figure class="still"><img src="img/stairwell.webp" width="720" height="1280" loading="lazy" decoding="async" draggable="false" alt="Stairwell landing with a capped window and finished seams"></figure>
+        <figure class="still"><img src="img/window.webp" width="720" height="1280" loading="lazy" decoding="async" draggable="false" alt="Capped window above the stairs, corners taped and finished"></figure>
+        <figure class="still"><img src="img/stairs.webp" width="720" height="1280" loading="lazy" decoding="async" draggable="false" alt="Steel stairs climbing past finished drywall"></figure>
+      </div>
+      <a class="more" href="https://facebook.com/profile.php?id=61595304966148">
+        <span>Click to see more of our work.</span>
+        <svg class="fb" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07Z"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="light" aria-labelledby="h-how">
+    <svg class="edge" data-edge data-from="#1d1932" data-to="#f1efe9" viewBox="0 0 1200 44" preserveAspectRatio="none" aria-hidden="true"></svg>
+    <div class="wrap section">
+      <h2 id="h-how">How it works</h2>
+      <ol class="steps">
+        <li><b>Message us</b><span>Tell us what the job is and where. A photo of the room helps.</span></li>
+        <li><b>Free estimate</b><span>We look it over and give you a straight price before any work starts.</span></li>
+        <li><b>We finish it right</b><span>Quality workmanship and attention to detail from start to finish.</span></li>
+      </ol>
+    </div>
+
+    <div class="wrap section estimate" id="estimate">
+      <div class="est-grid">
+        <div>
+          <h2 id="h-est">Free estimate</h2>
+          <p class="area">Serving Vermont.</p>
+        </div>
+        <form class="form" id="estForm" novalidate>
+          <div class="field" id="f-name">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="e-name">
+            <p class="err" id="e-name">Please add your name so we know who we're talking to.</p>
+          </div>
+          <div class="field">
+            <label for="town">Town <span class="opt">(optional)</span></label>
+            <input type="text" id="town" name="town" autocomplete="address-level2">
+          </div>
+          <fieldset class="field">
+            <legend class="legend">What do you need? <span class="opt">(optional)</span></legend>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="svc" value="Drywall installation"><span>Installation</span></label>
+              <label class="chip"><input type="checkbox" name="svc" value="Taping &amp; finishing"><span>Taping &amp; finishing</span></label>
+              <label class="chip"><input type="checkbox" name="svc" value="Repairs"><span>Repairs</span></label>
+            </div>
+          </fieldset>
+          <div class="field" id="f-job">
+            <label for="job">About the job</label>
+            <textarea id="job" name="job" required aria-describedby="e-job" placeholder="Rooms, rough size, new board or a repair…"></textarea>
+            <p class="err" id="e-job">Tell us a little about the job so we can give you a price.</p>
+          </div>
+          <div class="field">
+            <label for="when">When <span class="opt">(optional)</span></label>
+            <select id="when" name="when">
+              <option value="">Pick one</option>
+              <option>As soon as possible</option>
+              <option>In the next month</option>
+              <option>Just planning</option>
+            </select>
+          </div>
+          <button class="btn btn-fill" type="submit" id="send">Write my message</button>
+          <div class="out" id="out" aria-live="polite">
+            <pre id="msg"></pre>
+            <p class="note" id="note"></p>
+            <a class="btn btn-fill" id="openMsg" href="https://m.me/61595304966148">Open Messenger</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="close">
+  <svg class="edge" data-edge data-from="#f1efe9" data-to="#1d1932" viewBox="0 0 1200 44" preserveAspectRatio="none" aria-hidden="true" style="margin-bottom:44px"></svg>
+  <img src="img/logo.webp" width="480" height="400" loading="lazy" alt="Perfect X Contracting">
+  <p>Quality work. Reliable service.</p>
+</div>
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Perfect X Contracting · Vermont</span>
+    <nav aria-label="Contact">
+      <a href="https://facebook.com/profile.php?id=61595304966148"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07Z"/></svg>Facebook</a>
+      <a href="https://m.me/61595304966148"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.2 5.42 3.14 7.16.16.15.26.35.27.57l.05 1.78a.8.8 0 0 0 1.12.71l1.98-.87a.8.8 0 0 1 .53-.04c.91.25 1.88.39 2.91.39 5.64 0 10-4.13 10-9.7S17.64 2 12 2Zm6 7.46-2.94 4.66a1.5 1.5 0 0 1-2.17.4l-2.34-1.75a.6.6 0 0 0-.72 0l-3.16 2.4c-.42.32-.97-.18-.69-.63l2.94-4.66a1.5 1.5 0 0 1 2.17-.4l2.34 1.75a.6.6 0 0 0 .72 0l3.16-2.4c.42-.32.97.18.69.63Z"/></svg>Messenger</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+/* ===== Contact config: fill PHONE in once the owner confirms a number ===== */
+var CONTACT = {
+  PHONE: '',                         // e.g. '8025551234'. When set: number top-right (tel:), form hands off by text.
+  MESSENGER: 'https://m.me/61595304966148',
+  NAME: 'Perfect X Contracting'
+};
+
+/* ===== Shared animation loop: one rAF, tickers run only while visible ===== */
+var Loop = (function(){
+  var items = [], running = false;
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function frame(t){
+    var any = false;
+    for (var i = 0; i < items.length; i++) if (items[i].visible) { items[i].fn(t); any = true; }
+    if (any) requestAnimationFrame(frame); else running = false;
+  }
+  function wake(){ if (!running) { running = true; requestAnimationFrame(frame); } }
+  function add(el, fn){
+    var item = { fn: fn, visible: false };
+    items.push(item);
+    new IntersectionObserver(function(es){ item.visible = es[0].isIntersecting; if (item.visible) wake(); }, { rootMargin: '80px' }).observe(el);
+    return item;
+  }
+  return { add: add, wake: wake, reduce: reduce };
+})();
+
+/* ===== The wall: sand the taped and spotted seams smooth ===== */
+(function(){
+  var SPONGE_W = 74, SPONGE_H = 44;   // sanding sponge size (px, scaled up on desktop)
+  var SAND = 0.34;                    // how much one pass removes
+  var REGROW = 0.0045;                // fresh coat creeping back per frame (Above All tuning)
+  var DUST_MAX_PHONE = 520, DUST_MAX_DESK = 1300;
+  var AUTO_SPEED = 1;                 // auto sanding pace
+  var IDLE_MS = 2200;                 // hand back to auto after this long untouched
+  var REWARD_PX = 1400;               // drag distance before "Ready for paint."
+
+  var wall = document.getElementById('wall');
+  var cBase = document.getElementById('wallBase'), cRough = document.getElementById('wallRough'), cFx = document.getElementById('wallFx');
+  var gB = cBase.getContext('2d'), gR = cRough.getContext('2d'), gF = cFx.getContext('2d');
+  var hint = document.getElementById('wallHint').querySelector('span');
+  var W = 0, H = 0, DPR = 1, phone = true, pristine = null, layout = null, sprite = null;
+  var dust = [], frameN = 0;
+  var sp = { x: 0, y: 0, vx: 0, vy: 0, ang: 0 };          // sponge (spring-follows its target)
+  var ptr = { on: false, x: 0, y: 0, cx: 0, cy: 0, px: 0, py: 0, vx: 0, vy: 0, last: -1e9 };
+  var dragged = 0, rewarded = false, autoT = 0;
+
+  function rnd(a, b){ return a + Math.random() * (b - a); }
+
+  function plan(){
+    // Studs 16" on centre; one tapered horizontal joint, one butt joint, screw spots on the studs.
+    var s = Math.max(58, Math.min(96, W / 5.2));
+    var hy = H * 0.5, hb = Math.max(56, H * 0.15);
+    var bx = W * (phone ? 0.64 : 0.6), bb = phone ? 50 : 62;
+    var spots = [];
+    for (var x = s * 0.5; x < W - 10; x += s) {
+      if (Math.abs(x - bx) < bb * 0.8) continue;
+      for (var y = H * 0.14; y < H - 12; y += Math.max(54, H * 0.17)) {
+        if (Math.abs(y - hy) < hb * 0.75) continue;
+        spots.push({ x: x + rnd(-3, 3), y: y + rnd(-4, 4), w: rnd(20, 28), h: rnd(14, 19) });
+      }
+    }
+    return { s: s, hy: hy, hb: hb, bx: bx, bb: bb, spots: spots };
+  }
+
+  function blob(g, x, y, w, h){
+    g.beginPath();
+    var n = 14;
+    for (var i = 0; i <= n; i++) {
+      var a = i / n * Math.PI * 2, r = 1 + Math.sin(a * 3 + x) * 0.07 + Math.sin(a * 5 + y) * 0.05;
+      var ca = Math.cos(a), sa = Math.sin(a), q = Math.pow(Math.abs(ca), .55) * Math.sign(ca), z = Math.pow(Math.abs(sa), .55) * Math.sign(sa);
+      var px = x + q * w / 2 * r, py = y + z * h / 2 * r;
+      i ? g.lineTo(px, py) : g.moveTo(px, py);
+    }
+    g.closePath();
+  }
+
+  function drawBase(){
+    var L = layout, g = gB;
+    g.setTransform(DPR, 0, 0, DPR, 0, 0);
+    g.fillStyle = '#c4beb4'; g.fillRect(0, 0, W, H);
+    // paper grain
+    for (var i = 0; i < W * H / 90; i++) {
+      g.fillStyle = Math.random() < .5 ? 'rgba(255,255,255,.08)' : 'rgba(90,80,70,.05)';
+      g.fillRect(Math.random() * W, Math.random() * H, 1.2, 1.2);
+    }
+    // board break under the joints (very faint: they're covered)
+    g.fillStyle = 'rgba(80,70,60,.18)';
+    g.fillRect(0, L.hy - .5, W, 1); g.fillRect(L.bx - .5, 0, 1, H);
+    // sanded compound: feathered wide, no ridges
+    var gr = g.createLinearGradient(0, L.hy - L.hb, 0, L.hy + L.hb);
+    gr.addColorStop(0, 'rgba(242,241,236,0)'); gr.addColorStop(.28, 'rgba(242,241,236,.92)');
+    gr.addColorStop(.72, 'rgba(242,241,236,.92)'); gr.addColorStop(1, 'rgba(242,241,236,0)');
+    g.fillStyle = gr; g.fillRect(0, L.hy - L.hb, W, L.hb * 2);
+    gr = g.createLinearGradient(L.bx - L.bb, 0, L.bx + L.bb, 0);
+    gr.addColorStop(0, 'rgba(242,241,236,0)'); gr.addColorStop(.3, 'rgba(242,241,236,.92)');
+    gr.addColorStop(.7, 'rgba(242,241,236,.92)'); gr.addColorStop(1, 'rgba(242,241,236,0)');
+    g.fillStyle = gr; g.fillRect(L.bx - L.bb, 0, L.bb * 2, H);
+    g.filter = 'blur(3px)'; g.fillStyle = 'rgba(242,241,236,.9)';
+    L.spots.forEach(function(p){ blob(g, p.x, p.y, p.w * 1.25, p.h * 1.25); g.fill(); });
+    g.filter = 'none';
+  }
+
+  function ridgeLine(g, x0, y0, x1, y1, amp, seed){
+    // a knife-lap ridge lit from the window above-left: highlight on top, shadow under it
+    var n = Math.ceil(Math.hypot(x1 - x0, y1 - y0) / 8);
+    function path(off){
+      g.beginPath();
+      for (var i = 0; i <= n; i++) {
+        var t = i / n, x = x0 + (x1 - x0) * t, y = y0 + (y1 - y0) * t;
+        var w = Math.sin(t * 9 + seed) * amp + Math.sin(t * 23 + seed * 2) * amp * .4;
+        var nx = -(y1 - y0), ny = (x1 - x0), l = Math.hypot(nx, ny) || 1;
+        x += nx / l * (w + off); y += ny / l * (w + off);
+        i ? g.lineTo(x, y) : g.moveTo(x, y);
+      }
+    }
+    g.lineCap = 'round';
+    g.filter = 'blur(.6px)';
+    path(1.3); g.strokeStyle = 'rgba(120,108,96,.26)'; g.lineWidth = 2.2; g.stroke();
+    path(-0.7); g.strokeStyle = 'rgba(255,255,255,.7)'; g.lineWidth = 1.4; g.stroke();
+    g.filter = 'none';
+  }
+
+  function drawRough(){
+    var L = layout, c = document.createElement('canvas');
+    c.width = cRough.width; c.height = cRough.height;
+    var g = c.getContext('2d');
+    g.setTransform(DPR, 0, 0, DPR, 0, 0);
+    var mud = '#e9e7e1';
+    // hard-edged, slightly cooler unsanded coats
+    var hh = L.hb * .62, bw = L.bb * .62;
+    g.fillStyle = mud;
+    g.fillRect(0, L.hy - hh, W, hh * 2);
+    g.fillRect(L.bx - bw, 0, bw * 2, H);
+    // trowel streaks in the coat
+    for (var i = 0; i < 9; i++) {
+      var y = L.hy - hh + 6 + Math.random() * (hh * 2 - 12);
+      g.strokeStyle = 'rgba(150,140,128,.16)'; g.lineWidth = 1;
+      g.beginPath(); g.moveTo(rnd(-20, W * .3), y); g.bezierCurveTo(W * .3, y + rnd(-3, 3), W * .6, y + rnd(-3, 3), rnd(W * .7, W + 20), y + rnd(-2, 2)); g.stroke();
+    }
+    for (i = 0; i < 6; i++) {
+      var x = L.bx - bw + 5 + Math.random() * (bw * 2 - 10);
+      g.strokeStyle = 'rgba(150,140,128,.16)';
+      g.beginPath(); g.moveTo(x, rnd(-20, H * .3)); g.bezierCurveTo(x + rnd(-3, 3), H * .4, x + rnd(-3, 3), H * .7, x + rnd(-2, 2), H + 10); g.stroke();
+    }
+    // lap ridges at every coat edge
+    ridgeLine(g, -10, L.hy - hh, W + 10, L.hy - hh, 1.6, 1);
+    ridgeLine(g, -10, L.hy + hh, W + 10, L.hy + hh, 1.6, 2);
+    ridgeLine(g, -10, L.hy - hh * .35, W + 10, L.hy - hh * .35, 1.1, 3);
+    ridgeLine(g, L.bx - bw, -10, L.bx - bw, H + 10, 1.6, 4);
+    ridgeLine(g, L.bx + bw, -10, L.bx + bw, H + 10, 1.6, 5);
+    // pinholes and crumbs
+    for (i = 0; i < W * H / 1400; i++) {
+      var px = Math.random() * W, py = Math.random() < .6 ? L.hy + rnd(-hh, hh) : rnd(0, H);
+      if (Math.abs(py - L.hy) > hh && Math.abs(px - L.bx) > bw) continue;
+      g.fillStyle = 'rgba(110,98,86,.35)'; g.fillRect(px, py, 1.4, 1.4);
+      g.fillStyle = 'rgba(255,255,255,.8)'; g.fillRect(px - .8, py - .8, 1, 1);
+    }
+    // screw spots: hard-edged dabs with a knife tail and a ridge
+    L.spots.forEach(function(p){
+      // raking light: a soft lit edge up-left, a soft shadow down-right
+      g.shadowColor = 'rgba(255,255,255,.75)'; g.shadowBlur = 1.5; g.shadowOffsetX = -.8; g.shadowOffsetY = -.9;
+      g.fillStyle = mud; blob(g, p.x, p.y, p.w, p.h); g.fill();
+      g.shadowColor = 'rgba(100,88,76,.38)'; g.shadowBlur = 2; g.shadowOffsetX = 1; g.shadowOffsetY = 1.4;
+      blob(g, p.x, p.y, p.w, p.h); g.fill();
+      g.shadowColor = 'transparent';
+      g.strokeStyle = 'rgba(150,140,128,.28)'; g.lineWidth = 1;
+      g.beginPath(); g.moveTo(p.x + p.w * .5, p.y - 2); g.lineTo(p.x + p.w * .5 + rnd(4, 9), p.y - 1); g.stroke();
+    });
+    return c;
+  }
+
+  function makeSprite(){
+    // violet sanding sponge seen from the back: foam body, rounded, speckled
+    var w = SPONGE_W, h = SPONGE_H, c = document.createElement('canvas');
+    c.width = Math.ceil((w + 30) * DPR); c.height = Math.ceil((h + 30) * DPR);
+    var g = c.getContext('2d'); g.scale(DPR, DPR); g.translate(15, 15);
+    function rr(x, y, ww, hh, r){ g.beginPath(); g.roundRect ? g.roundRect(x, y, ww, hh, r) : g.rect(x, y, ww, hh); }
+    g.shadowColor = 'rgba(40,26,70,.38)'; g.shadowBlur = 10; g.shadowOffsetX = 5; g.shadowOffsetY = 7;
+    rr(0, 0, w, h, 10); g.fillStyle = '#4b1fa8'; g.fill();
+    g.shadowColor = 'transparent';
+    var gr = g.createLinearGradient(0, 0, w * .4, h);
+    gr.addColorStop(0, '#9a63ff'); gr.addColorStop(1, '#6a2fe0');
+    rr(2, 2, w - 6, h - 7, 8); g.fillStyle = gr; g.fill();
+    for (var i = 0; i < w * h / 9; i++) {
+      g.fillStyle = Math.random() < .5 ? 'rgba(40,10,110,.28)' : 'rgba(220,200,255,.25)';
+      g.beginPath(); g.arc(4 + Math.random() * (w - 10), 4 + Math.random() * (h - 12), Math.random() * 1.1 + .3, 0, 7); g.fill();
+    }
+    // dust caked on the leading edge
+    g.fillStyle = 'rgba(242,241,236,.55)'; rr(1, h - 7, w - 4, 5, 3); g.fill();
+    return c;
+  }
+
+  function size(){
+    var r = wall.getBoundingClientRect();
+    var nw = Math.round(r.width), nh = Math.round(r.height);
+    if (nw === W && nh === H) return;            // the address bar fires resize mid-drag: keep the sanding
+    W = nw; H = nh; phone = W < 700;
+    DPR = Math.min(window.devicePixelRatio || 1, phone ? 1.5 : 2);
+    if (!phone) { SPONGE_W = 96; SPONGE_H = 56; }
+    [cBase, cRough, cFx].forEach(function(c){ c.width = Math.round(W * DPR); c.height = Math.round(H * DPR); });
+    layout = plan(); drawBase(); pristine = drawRough(); sprite = makeSprite();
+    gR.setTransform(1, 0, 0, 1, 0, 0); gR.clearRect(0, 0, cRough.width, cRough.height); gR.drawImage(pristine, 0, 0);
+    gF.setTransform(DPR, 0, 0, DPR, 0, 0);
+    if (!sp.x) { sp.x = W * .3; sp.y = layout.hy; }
+    // a sanded patch so the contrast reads in a still frame too
+    for (var i = 0; i < 12; i++) sandAt(W * (.12 + i * .02), layout.hy + Math.sin(i) * 10, 0, 1);
+  }
+
+  function sandAt(x, y, ang, amt){
+    gR.save();
+    gR.setTransform(DPR, 0, 0, DPR, 0, 0);
+    gR.globalCompositeOperation = 'destination-out';
+    gR.translate(x, y); gR.rotate(ang);
+    gR.globalAlpha = amt;
+    gR.beginPath();
+    gR.roundRect ? gR.roundRect(-SPONGE_W / 2, -SPONGE_H / 2, SPONGE_W, SPONGE_H, 10) : gR.rect(-SPONGE_W / 2, -SPONGE_H / 2, SPONGE_W, SPONGE_H);
+    gR.filter = 'blur(2px)'; gR.fill();
+    gR.restore();
+  }
+
+  function autoTarget(t){
+    // work along the joints: slow travel plus quick back-and-forth sanding strokes
+    var L = layout, k = t * 0.00006 * AUTO_SPEED;
+    var leg = (k % 3), x, y;
+    var stroke = Math.sin(t * 0.011 * AUTO_SPEED) * (phone ? 26 : 38), wob = Math.cos(t * 0.0057) * 10;
+    if (leg < 1.5) { var u = leg / 1.5; u = u < .5 ? u * 2 : 2 - u * 2; x = W * .08 + u * W * .84 + stroke; y = L.hy + wob + Math.sin(t * .0009) * L.hb * .25; }
+    else { var v = (leg - 1.5) / 1.5; v = v < .5 ? v * 2 : 2 - v * 2; x = L.bx + wob; y = H * .1 + v * H * .8 + stroke; }
+    return { x: x, y: y };
+  }
+
+  function spawnDust(x, y, speed){
+    var max = phone ? DUST_MAX_PHONE : DUST_MAX_DESK, n = Math.min(10, speed * .5);
+    for (var i = 0; i < n; i++) {
+      if (dust.length >= max) dust.shift();
+      dust.push({ x: x + rnd(-SPONGE_W / 2, SPONGE_W / 2), y: y + SPONGE_H / 2 * rnd(.2, 1), vx: rnd(-.6, .6) + sp.vx * .08, vy: rnd(-1.1, .1), life: 1, decay: rnd(.004, .011), r: rnd(.7, 2.2), ph: Math.random() * 6.28 });
+    }
+  }
+
+  function shaft(x, y){
+    // window light falling from the top left; dust glows inside it
+    var cx = W * .18 + y * .45, d = Math.abs(x - cx) / (W * .2);
+    return Math.max(0, 1 - d * d);
+  }
+
+  function tick(t){
+    size();
+    frameN++;
+    var now = performance.now();
+    // pointer: read the rect every frame (the page may scroll under the finger)
+    var r = wall.getBoundingClientRect();
+    if (ptr.on) { ptr.x = ptr.cx - r.left; ptr.y = ptr.cy - r.top; }
+    var manual = ptr.on || (now - ptr.last < IDLE_MS);
+    var tgt = manual ? { x: ptr.x, y: ptr.y } : autoTarget(t);
+    if (!manual && Loop.reduce) tgt = { x: sp.x, y: sp.y };
+    // spring-follow with a little lag so the sponge feels held
+    var k = manual ? .45 : .14;
+    var nx = sp.x + (tgt.x - sp.x) * k, ny = sp.y + (tgt.y - sp.y) * k;
+    sp.vx = nx - sp.x; sp.vy = ny - sp.y; sp.x = nx; sp.y = ny;
+    var speed = Math.hypot(sp.vx, sp.vy);
+    sp.ang += ((Math.max(-.35, Math.min(.35, sp.vx * .02))) - sp.ang) * .15;
+    var sanding = manual ? ptr.on : !Loop.reduce;
+    if (sanding && speed > .3) {
+      var steps = Math.ceil(speed / 6);
+      for (var i = 1; i <= steps; i++) sandAt(sp.x - sp.vx * (1 - i / steps), sp.y - sp.vy * (1 - i / steps), sp.ang, SAND / steps * Math.min(1, speed / 4));
+      if (!Loop.reduce) spawnDust(sp.x, sp.y, speed);
+      if (ptr.on) { dragged += speed; if (!rewarded && dragged > REWARD_PX) { rewarded = true; hint.textContent = 'Ready for paint.'; } }
+    }
+    // fresh coat creeps back
+    if (!Loop.reduce && frameN % 3 === 0) {
+      gR.save(); gR.setTransform(1, 0, 0, 1, 0, 0); gR.globalAlpha = REGROW * 3; gR.drawImage(pristine, 0, 0); gR.restore();
+    }
+    // fx layer: light, dust, sponge
+    gF.clearRect(0, 0, W, H);
+    var lg = gF.createLinearGradient(0, 0, W * .9, H * .5);
+    lg.addColorStop(0, 'rgba(255,252,240,.16)'); lg.addColorStop(.5, 'rgba(255,252,240,.05)'); lg.addColorStop(1, 'rgba(255,252,240,0)');
+    gF.fillStyle = lg; gF.fillRect(0, 0, W, H);
+    var pvx = ptr.vx, pvy = ptr.vy;
+    for (i = dust.length - 1; i >= 0; i--) {
+      var p = dust[i];
+      // layered drift: slow swell plus each mote's own wobble, then settle
+      p.vx += Math.sin(t * .0011 + p.y * .02 + p.ph) * .018 + Math.sin(t * .0023 + p.ph * 2) * .01;
+      p.vy += Math.cos(t * .0013 + p.x * .017 + p.ph) * .014 + .006;
+      if (ptr.on || now - ptr.last < 300) {
+        var dx = p.x - ptr.x, dy = p.y - ptr.y, dd = dx * dx + dy * dy;
+        if (dd < 6400 && dd > 1) { var f = (1 - Math.sqrt(dd) / 80) * .5; p.vx += dx / Math.sqrt(dd) * f + pvx * .03; p.vy += dy / Math.sqrt(dd) * f + pvy * .03; }
+      }
+      p.vx *= .965; p.vy *= .965; p.x += p.vx; p.y += p.vy;
+      p.life -= p.decay;
+      if (p.life <= 0 || p.y > H + 10) { dust.splice(i, 1); continue; }
+      var glow = shaft(p.x, p.y);
+      gF.fillStyle = 'rgba(250,248,242,' + (p.life * (.35 + glow * .55)).toFixed(3) + ')';
+      gF.beginPath(); gF.arc(p.x, p.y, p.r * (1 + glow * .4), 0, 6.283); gF.fill();
+      if (glow > .3 && p.r > 1.4) { gF.fillStyle = 'rgba(120,108,96,' + (p.life * .12).toFixed(3) + ')'; gF.fillRect(p.x + 1, p.y + 1, 1, 1); }
+    }
+    gF.save(); gF.translate(sp.x, sp.y); gF.rotate(sp.ang);
+    gF.drawImage(sprite, -SPONGE_W / 2 - 15, -SPONGE_H / 2 - 15, sprite.width / DPR, sprite.height / DPR);
+    gF.restore();
+    ptr.vx *= .8; ptr.vy *= .8;
+  }
+
+  function down(e){
+    ptr.on = true; ptr.cx = e.clientX; ptr.cy = e.clientY; ptr.last = performance.now();
+    ptr.px = e.clientX; ptr.py = e.clientY;
+    wall.style.cursor = 'grabbing';
+    if (e.pointerId != null && wall.setPointerCapture) try { wall.setPointerCapture(e.pointerId); } catch (_) {}
+    if (e.cancelable) e.preventDefault();
+    Loop.wake();
+  }
+  function move(e){
+    if (e.pointerType === 'mouse' && !ptr.on) {
+      // desktop: the sponge follows the mouse without a click, sanding lightly
+      ptr.cx = e.clientX; ptr.cy = e.clientY; ptr.last = performance.now();
+      var r = wall.getBoundingClientRect(); ptr.x = e.clientX - r.left; ptr.y = e.clientY - r.top;
+      ptr.on = true; ptr.hover = true;
+    }
+    if (!ptr.on) return;
+    ptr.vx = e.clientX - ptr.px; ptr.vy = e.clientY - ptr.py; ptr.px = e.clientX; ptr.py = e.clientY;
+    ptr.cx = e.clientX; ptr.cy = e.clientY; ptr.last = performance.now();
+    Loop.wake();
+  }
+  function up(){ ptr.on = false; ptr.hover = false; ptr.last = performance.now(); wall.style.cursor = ''; }
+  wall.addEventListener('pointerdown', down);
+  wall.addEventListener('pointermove', move);
+  wall.addEventListener('pointerup', up);
+  wall.addEventListener('pointercancel', up);
+  wall.addEventListener('pointerleave', function(e){ if (e.pointerType === 'mouse') up(); });
+  wall.addEventListener('touchmove', function(e){ if (e.cancelable) e.preventDefault(); }, { passive: false });
+
+  size();
+  Loop.add(wall, tick);
+  if (Loop.reduce) tick(0);
+})();
+
+/* ===== Feathered mud edges between sections ===== */
+(function(){
+  var SPEED = 0.0016, AMP = 7;
+  document.querySelectorAll('[data-edge]').forEach(function(svg, idx){
+    var NS = 'http://www.w3.org/2000/svg';
+    svg.style.background = svg.dataset.from;
+    var feather = document.createElementNS(NS, 'path'), solid = document.createElementNS(NS, 'path');
+    feather.setAttribute('fill', svg.dataset.to); feather.setAttribute('opacity', '.55');
+    solid.setAttribute('fill', svg.dataset.to);
+    svg.appendChild(feather); svg.appendChild(solid);
+    function d(t, base, amp, ph){
+      var s = 'M0 44 L0 ' + base;
+      for (var x = 0; x <= 1200; x += 20) {
+        var y = base + Math.sin(x * .006 + t * SPEED + ph) * amp + Math.sin(x * .017 - t * SPEED * 1.7 + ph * 2) * amp * .45 + Math.sin(x * .041 + t * SPEED * .6) * amp * .15;
+        s += ' L' + x + ' ' + y.toFixed(1);
+      }
+      return s + ' L1200 44 Z';
+    }
+    function draw(t){ feather.setAttribute('d', d(t, 20, AMP, idx)); solid.setAttribute('d', d(t, 25, AMP * .9, idx + .35)); }
+    draw(0);
+    if (!Loop.reduce) Loop.add(svg, draw);
+  });
+})();
+
+/* ===== Lazy video: play only while on screen ===== */
+(function(){
+  document.querySelectorAll('[data-lazyvideo]').forEach(function(v){
+    new IntersectionObserver(function(es){
+      if (es[0].isIntersecting) { if (v.preload === 'none') { v.preload = 'auto'; } if (!matchMedia('(prefers-reduced-motion: reduce)').matches) v.play().catch(function(){}); }
+      else v.pause();
+    }, { rootMargin: '120px' }).observe(v);
+  });
+})();
+
+/* ===== Service rows pre-tick the form ===== */
+(function(){
+  document.querySelectorAll('.row[data-service]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var box = document.querySelector('.chip input[value="' + a.dataset.service + '"]');
+      if (box) box.checked = true;
+    });
+  });
+})();
+
+/* ===== Estimate form → a message for Messenger (or a text once PHONE is set) ===== */
+(function(){
+  var form = document.getElementById('estForm'), out = document.getElementById('out'), msg = document.getElementById('msg');
+  var note = document.getElementById('note'), open = document.getElementById('openMsg'), send = document.getElementById('send');
+  var top = document.getElementById('topContact');
+  if (CONTACT.PHONE) {
+    var p = CONTACT.PHONE.replace(/\D/g, '');
+    top.href = 'tel:+1' + p;
+    top.querySelector('span').textContent = '(' + p.slice(0, 3) + ') ' + p.slice(3, 6) + '-' + p.slice(6);
+    send.textContent = 'Text us this request';
+  }
+  function req(id){
+    var el = document.getElementById(id), f = document.getElementById('f-' + id), ok = el.value.trim() !== '';
+    f.classList.toggle('bad', !ok); el.setAttribute('aria-invalid', ok ? 'false' : 'true');
+    return ok;
+  }
+  ['name', 'job'].forEach(function(id){ document.getElementById(id).addEventListener('input', function(){ if (document.getElementById('f-' + id).classList.contains('bad')) req(id); }); });
+  form.addEventListener('input', function(){ if (out.classList.contains('show')) { out.classList.remove('show'); } });
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var a = req('name'), b = req('job');
+    if (!a || !b) { document.getElementById(!a ? 'name' : 'job').focus(); return; }
+    var svc = Array.prototype.map.call(form.querySelectorAll('input[name=svc]:checked'), function(i){ return i.value; });
+    var lines = ['Hi ' + CONTACT.NAME + '! I\'d like a free estimate.', 'Name: ' + form.name.value.trim()];
+    if (form.town.value.trim()) lines.push('Town: ' + form.town.value.trim());
+    if (svc.length) lines.push('Work: ' + svc.join(', '));
+    lines.push('Job: ' + form.job.value.trim());
+    if (form.when.value) lines.push('When: ' + form.when.value);
+    var text = lines.join('\n');
+    if (CONTACT.PHONE) { location.href = 'sms:+1' + CONTACT.PHONE.replace(/\D/g, '') + '?&body=' + encodeURIComponent(text); return; }
+    msg.textContent = text;
+    out.classList.add('show');
+    var hold = 'Press and hold the message to copy it, then open Messenger, paste it in and send. A photo of the room helps.';
+    note.textContent = hold;
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(function(){ note.textContent = 'Copied. Open Messenger, paste it in and send. A photo of the room helps.'; }, function(){});
+    }
+    open.href = CONTACT.MESSENGER;
+    open.focus({ preventScroll: true });
+    out.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  });
+  document.getElementById('yr').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
