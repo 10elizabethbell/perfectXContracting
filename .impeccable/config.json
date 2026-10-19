@@ -68,6 +68,12 @@
         "value": "clamp(20px,5.4vw,22px)",
         "createdAt": "2026-10-19T14:06:01.141Z",
         "reason": "pitch-site build: deliberate one-off the DESIGN.md documenter omitted (Facebook 'more' link lead size)"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "22px",
+        "createdAt": "2026-10-19T14:06:10.740Z",
+        "reason": "pitch-site build: Facebook 'more' link fluid max, deliberate one-off"
       }
     ]
   }
